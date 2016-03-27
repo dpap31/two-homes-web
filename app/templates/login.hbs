@@ -1,0 +1,12 @@
+<h3>User Login</h3>
+<form {{action 'login' on='submit'}}>
+  <label for="Email">Login</label>
+  {{input id='Email' placeholder='Enter Login' value=identification}}
+  <label for="password">Password</label>
+  {{input id='password' placeholder='Enter Password' type='password' value=password}}
+  <button type="submit">Login</button>
+  {{#if errorMessage}}
+    <p>Invalid Login</p>
+  {{/if}}
+</form>
+{{outlet}}
