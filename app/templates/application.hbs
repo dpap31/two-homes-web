@@ -4,6 +4,7 @@
 
 {{link-to 'Register User' 'register-user'}}
 {{#if session.isAuthenticated}}
+  Welcome {{sessionUser.user.firstName}}
   <button {{action 'logout'}}> Logout</button>
 {{else}}
   {{link-to 'Login' 'login'}}
