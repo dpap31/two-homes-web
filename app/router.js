@@ -11,7 +11,10 @@ Router.map(function() {
   this.route('conversations', function() {
     this.route('new');
   });
-  this.route('conversation', { path: 'conversations/:conversation_id'});
+  this.route('conversation', { path: 'conversation/:conversation_id'}, function() {
+    this.route('edit');
+    this.route('invite-user');
+  });
 });
 
 export default Router;

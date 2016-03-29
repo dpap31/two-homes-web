@@ -1,4 +1,9 @@
-<h3>Conversation</h3>
+<h2>Conversation</h2>
 <p>Code: {{model.code}}</p>
-<p>Participants: {{#each model.userConversations as |convo| }} {{convo.user.firstName}} {{convo.user.lastName}} {{/each}}</p>
+<p>{{link-to 'Edit' 'conversation.edit' model}}</p>
+<strong>Participants:</strong>
+{{#each model.users as |user| }}
+<p>{{user.firstName}} {{user.lastName}}</p>
+{{/each}}
+{{link-to 'Invite to thread' 'conversation.invite-user' model}}
 {{outlet}}

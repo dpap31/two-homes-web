@@ -6,5 +6,6 @@ export default DS.Model.extend({
   email: DS.attr(),
   password: DS.attr(),
   persona: DS.attr(),
-  userConversations: DS.hasMany('user-conversations')
+  userConversations: DS.hasMany('user-conversations'),
+  conversations: DS.hasMany('conversations')
 });
