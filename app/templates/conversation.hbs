@@ -1,0 +1,4 @@
+<h3>Conversation</h3>
+<p>Code: {{model.code}}</p>
+<p>Participants: {{#each model.userConversations as |convo| }} {{convo.user.firstName}} {{convo.user.lastName}} {{/each}}</p>
+{{outlet}}

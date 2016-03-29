@@ -1,0 +1,15 @@
+{{outlet}}
+{{#if session.isAuthenticated}}
+<ul>
+  <li>
+    {{ link-to 'New Conversation' 'conversations.new' }}
+  </li>
+</ul>
+<h4>My Conversations</h4>
+<ul>
+{{#each sessionUser.user.userConversations as |convo|}}
+  <li>{{link-to convo.conversation.code 'conversation' convo.conversation}}</li>
+{{/each}}
+</ul>
+{{/if}}
+

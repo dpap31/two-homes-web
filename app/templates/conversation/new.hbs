@@ -1,0 +1,12 @@
+<h3> New Conversation </h3>
+<div class='input-group'>
+  <label>Conversation Code</label>
+  {{input value=model.code}}
+</div>
+<div class='input-group'>
+  <label>Password</label>
+  {{input value=model.password}}
+</div>
+
+<button {{action 'save'}}>Create Conversation</button>
+{{outlet}}
