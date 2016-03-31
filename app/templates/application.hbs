@@ -1,20 +1,16 @@
 {{app-navbar}}
 <div class='container'>
-{{#link-to 'application'}}
-  <h2 id="title">TwoHomes</h2>
-{{/link-to}}
-
-<div class='authentication-navigation'>
-  {{link-to 'Register User' 'register-user'}}
-  {{#if session.isAuthenticated}}
-    Welcome {{sessionUser.user.firstName}}
-  {{/if}}
-  {{#if session.isAuthenticated}}
-    <button {{action 'logout'}}> Logout</button>
-  {{else}}
-    {{link-to 'Login' 'login'}}
-  {{/if}}
+<div class='hero'>
+  <div class='bg-image'>
+    <div class='hero-text'>
+      <h1 id="title">Co-Parenting Communication</h1>
+      <h3>Divorce is hard, family communication doesn't have to be.</h3>
+    </div>
+  </div>
 </div>
+
+
+
 
 {{outlet}}
 </div>

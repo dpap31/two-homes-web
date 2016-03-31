@@ -1,0 +1,18 @@
+.hero-text{
+	margin-top: 80px;
+	text-align: center;
+	color: white;
+}
+
+.hero{
+  min-height: 600px;
+  position: relative;
+}  
+
+.bg-image{
+  background: url(images/family-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
