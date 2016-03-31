@@ -11,13 +11,12 @@
    </div>
    <div class="collapse navbar-collapse" id="navbar-collapse-2">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Works</a></li>
-      <li><a href="#">News</a></li>
+      <li>{{link-to 'Home' 'application'}}</li>
+      <li><a href="#">Families</a></li>
+      <li><a href="#">Professionals</a></li>
+      <li><a href="#">Features</a></li>
       {{#if session.isAuthenticated}}
-        <li>{{link-to 'Logout' 'logout'}}</li>
+        <li><a {{action 'logout'}} href='#'>Logout</a></li>
       {{else}}
          <li>{{link-to 'Login' 'login'}}</li>
       {{/if}}
