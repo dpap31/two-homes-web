@@ -1,18 +1,30 @@
+/*Navbar*/
+.navbar{
+	margin-bottom: 0px;
+}
+
+/*Hero Image*/
 .hero-text{
-	margin-top: 80px;
+	margin-top: 12%;
 	text-align: center;
 	color: white;
 }
 
-.hero{
-  min-height: 600px;
-  position: relative;
-}  
+.hero-text button{
+	margin-top: 1%;
+}
 
-.bg-image{
-  background: url(images/family-bg.jpg) no-repeat center center fixed; 
+.hero {
+  background: url('https://s3-us-west-2.amazonaws.com/two-homes/family-bg.jpg') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  display: table;
+  width: 100%;
+}
+.hero .container {
+  display: table-cell;
+  text-align: center;
+  height: 689px
 }
