@@ -8,7 +8,7 @@
 <h4>My Conversations</h4>
 <ul>
 {{#each sessionUser.user.conversations as |convo|}}
-  <li>{{link-to convo.code 'conversation' convo}}</li>
+  <li>{{link-to convo.code 'conversations.conversation' convo}}</li>
 {{/each}}
 </ul>
 {{/if}}

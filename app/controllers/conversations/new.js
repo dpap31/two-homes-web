@@ -7,13 +7,13 @@ export default Ember.Controller.extend({
       let conversation = this.get('model');
       let self = this;
       let onSuccess = function(){
-        self.get('sessionUser.user.userConversations').reload();
+        self.get('sessionUser.user.conversations').reload();
         self.transitionToRoute('index');
       };
       let onFailure = function(){
-        console.log('ERROR')
+        console.log('ERROR');
       };
-      conversation.save().then(onSuccess, onFailure)
+      conversation.save().then(onSuccess, onFailure);
     }
   }
 });
