@@ -31,7 +31,7 @@
 
 /*login*/
 
-.login-form{
+.login-registration-form{
   margin-top: 18%;
   padding: 10%;
   border-radius: 10%;
@@ -44,7 +44,7 @@
   margin-top: 3%;
 }
 
-.login-form button{
+.login-registration-form button{
   margin-bottom: 5%;
   margin-top: 5%;
 }
