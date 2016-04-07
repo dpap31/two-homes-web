@@ -8,7 +8,9 @@
 		  </div>
       <div class="list-group">
         {{#each sessionUser.user.conversations as |convo|}}
-        <a class="list-group-item">{{link-to convo.code 'app.conversations.conversation' convo}}</a>
+          {{#link-to 'app.conversations.conversation' convo}}
+           <a class="list-group-item">{{convo.code}}</a>
+          {{/link-to}}
         {{/each}}
       </div>
 		</div>
@@ -19,6 +21,7 @@
 	</div>
 	<div class='col-md-10'>
 	  {{outlet}}
+	  <div class="well">MESSAGE THREAD GOES HERE!</div>
 	  <div class="well">MESSAGE THREAD GOES HERE!</div>
 	</div>
 </div>
