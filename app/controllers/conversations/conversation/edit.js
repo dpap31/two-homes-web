@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
 	    let self = this;
 	    let onSuccess = function(){
 	      self.get('sessionUser.user.conversations').reload();
-	      self.transitionToRoute('app.index');
+	      self.transitionToRoute('index');
 	    };
 	    let onFailure = function(){
 	      console.log('ERROR');

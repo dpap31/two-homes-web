@@ -1,0 +1,19 @@
+{{#if session.isAuthenticated}}
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    Conversations
+  </div>
+<div class="list-group">
+  {{#each sortedConversations as |convo|}}
+    {{#active-link tagName='div'}}
+      {{link-to convo.code 'conversations.conversation' convo  class="list-group-item"}}
+    {{/active-link}}
+  {{/each}}
+  </div>
+</div>
+{{/if}}
+{{#link-to 'conversations.new'}}
+  <a class="btn btn-success"role="button">New Conversation</a>
+{{/link-to}}
+{{yield}}
