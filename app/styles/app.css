@@ -49,14 +49,79 @@
   border: 1px solid #e7e7e7;
   border-radius: 5px;
 }
-.chat-panel .chat-participants{
+.chat-panel .participants{
   padding-bottom: 2%;
 }
 .messages-region{
   border: 1px solid #e7e7e7;
+  background: #e5e5e5;
 }
 .messages-region .thread{
-  min-height: 300px;
+  padding: 20px;
+  height: 300px;
+  width: 100%;
   display: inline-block;
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  overflow: scroll
+}
+
+/*Messages*/
+.conversation li {
+  display: flex;
+}
+
+.avatar {
+  width: 70px;
+  position: relative;
+}
+.avatar img {
+  width: 80%;
+  display: block;
+  margin: 2px;
+}
+
+.self .avatar img {
+  float: right;
+}
+.other .avatar img {
+  float: left;
+}
+
+.self .avatar:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid white;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  box-shadow: 1px 1px 2px rgba(black, 0.2);
+}
+
+.other .avatar:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid white;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.conversation .self {
+  justify-content: flex-end;
+}
+.message .help-block{
+  font-size: 70%
+}
+
+.message {
+  background: white;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(black, 0.2);
 }
