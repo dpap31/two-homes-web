@@ -1,7 +1,13 @@
 {{#if session.isAuthenticated}}
 <div class="panel panel-default">
   <div class="panel-heading">
-    Conversations
+    <span class="pull-left">Conversations</span>
+    <span class="pull-right">
+      {{#link-to 'conversations.new'}}
+        {{fa-icon 'plus-circle'}}
+      {{/link-to}}
+    </span>
+    <br>
   </div>
 <div class="list-group">
   {{#each sortedConversations as |convo|}}
@@ -11,8 +17,5 @@
   {{/each}}
   </div>
 </div>
-{{/if}}
-{{#link-to 'conversations.new'}}
-  <a class="btn btn-success"role="button">New Conversation</a>
-{{/link-to}}
 {{yield}}
+{{/if}}

@@ -30,7 +30,7 @@
   margin-top: 18%;
   padding: 10%;
   border-radius: 10%;
-  border: 1px solid black;
+  border: 1px solid #e7e7e7;
 }
 
 .login-register-header{
@@ -42,4 +42,21 @@
 .login-registration-form button{
   margin-bottom: 5%;
   margin-top: 5%;
+}
+
+/* Conversation */
+.chat-panel{
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+}
+.chat-panel .chat-participants{
+  padding-bottom: 2%;
+}
+.messages-region{
+  border: 1px solid #e7e7e7;
+}
+.messages-region .thread{
+  min-height: 300px;
+  display: inline-block;
+  margin-bottom: 30px
 }

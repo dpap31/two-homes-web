@@ -1,17 +1,22 @@
-<h3>Conversation Code: {{model.code}}</h3>
-<p>{{link-to 'Edit' 'conversations.conversation.edit' model}}</p>
-<div class="panel-body">
-	<strong>Participants:</strong>
-	<ul class="chat list-unstyled">
-	{{#each model.users as |user| }}
-	  <li class="left clearfix">
-	    <span class="chat-img pull-left">
-	      <img src="http://placehold.it/50/55C1E7/fff&text={{avatarInitials user.firstName}}{{ avatarInitials user.lastName}}" alt="User Avatar" class="img-circle" />
-	      {{fullName  user.firstName " " user.lastName}}
-	     </span>
-	  </li>
-	{{/each}}
-	</ul>
+<div class='chat-panel col-md-10 col-md-offset-1'>
+    {{chat-header conversation=model}}
+    {{chat-participants participants=model.users}} 
+    {{outlet}}
 </div>
-{{link-to 'Invite to thread' 'conversations.conversation.invite-user' model}}
-{{outlet}}
+<div class='messages-region col-md-10 col-md-offset-1'>
+  <div class='thread'>
+    <ul>
+      <li>Place holder text goes here</li>
+      <li>Place holder text goes here</li>
+      <li>Place holder text goes here</li>
+      <li>Place holder text goes here</li>
+      <li>Place holder text goes here</li>
+      <li>Place holder text goes here</li>
+    </ul>
+  </div>
+	<div class='form-group'>
+		 <textarea class='form-control' rows='4' id='message-text'></textarea>
+	</div>
+	<button class='btn btn-primary'> Send </button>
+</div>
+
