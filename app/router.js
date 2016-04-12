@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('login', {});
   this.route('conversations', {}, function() {
     this.route('new', {});
+    this.route('join');
     this.route('conversation', { path: ':conversation_id'}, function() {
       this.route('edit', {});
       this.route('invite-user', {});

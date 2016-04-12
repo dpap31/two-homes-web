@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
       let self = this;
       let onSuccess = function(user) {
         if (self.get('session.isAuthenticated')){
-          self.transitionToRoute('application');
+          self.transitionToRoute('join-conversation');
         } else{
           self.send('login', user.get('email'), user.get('password'));
         }
