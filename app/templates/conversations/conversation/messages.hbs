@@ -1,0 +1,6 @@
+{{message-region}}
+<div class='form-group'>
+  {{textarea value=model.newMessage.body class='form-control' rows='4' id='message-text' placeholder='Write your message..'}}
+</div>
+<button class='btn btn-primary'{{action "sendMessage" model.newMessage}}>{{fa-icon 'paper-plane' }}   Send</button>
+{{outlet}}

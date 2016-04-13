@@ -42,6 +42,7 @@
     "ember-resolver": "^2.0.3",
     "ember-rl-dropdown": "^0.7.0",
     "ember-simple-auth": "1.1.0-beta.3",
+    "emberfire": "1.6.6",
     "loader.js": "^4.0.1"
   }
 }
