@@ -5,14 +5,15 @@ export default Ember.Route.extend({
 
   model() {
     let self = this;
-    const messages = self.modelFor('conversations.conversation')
+    const conversation = self.modelFor('conversations.conversation')
+    let messages = self.store.query('message', { filter: { conversation: conversation.get('id') } })
     //.modelFor('conversations.conversation').get('messages')
     //const conversation_id = self.modelFor('conversations.conversation').get('id')
 
     return this.get('sessionUser.user').then(function(user) {
       return Ember.RSVP.hash({
-        conversation: self.modelFor('conversations.conversation'),
-        //messages: messages,
+        conversation: conversation,
+        messages: messages,
         //self.store.query('message', { filter: {conversation: 1 } }),
         //self.store.findAll('message'),
         //self.store.find('message', params.conversation_id, 1),
