@@ -14,9 +14,7 @@ Router.map(function() {
     this.route('conversation', { path: ':conversation_id'}, function() {
       this.route('edit', {});
       this.route('invite-user', {});
-      this.route('messages'), function() {
-        this.route('new');
-      };
+      this.route('messages');
     });
   });
 });
