@@ -3,8 +3,6 @@
   {{chat-participants participants=model.users}}  
 </div>
 <div class='messages-region col-md-10 col-md-offset-1'>
-  {{model.messages.length}}
-  {{model.messages.content}}
   {{message-region messages=model.messages}}
   {{outlet}}
 </div>

@@ -1,10 +1,12 @@
 <div class='thread'>
   <ol class='list-unstyled conversation'>
   {{#each messages as |message| }}
+    {{#if message.isSent}}
     {{#if (eq message.user.id sessionUser.user.id) }}
     <li class='self'>
       <div class='message'>
         <p>
+        Message ID:{{message.createdAt}}
         Convo ID:{{message.conversation.id}}
         Message UID:{{message.user.id}}
         Session UID: {{sessionUser.user.id}}
@@ -33,6 +35,7 @@
         </span>
       </div>
     </li>
+    {{/if}}
     {{/if}}
   {{/each}}
   </ol>

@@ -2,10 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    sendMessage(){
-      var newMessage = this.get('model.newMessage');
-      newMessage.save();
+     sendMessage(message){
+      message.createdAt = new Date();
+      message.isSent = true;
+      message.save();
       this.send("messageSent");
-    }
-  }
+     }
+   }
 });

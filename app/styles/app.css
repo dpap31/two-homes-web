@@ -68,6 +68,7 @@
 /*Messages*/
 .conversation li {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .avatar {
