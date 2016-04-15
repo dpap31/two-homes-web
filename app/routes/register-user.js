@@ -10,5 +10,25 @@ export default Ember.Route.extend({
     } else {
       return this.get('store').createRecord('user');
     }
+  },
+
+  session: Ember.inject.service('session'),
+
+  actions:{
+    saveUser(user) {
+      let route = this;
+      console.log(user)
+      let onSuccess = function(user) {
+        if (route.get('session.isAuthenticated')){
+          route.transitionTo('conversations.join-conversation');
+        } else{
+          route.send('login', user.get('email'), user.get('password'));
+        }
+      };
+      let onFailure = function(error) {
+        console.log('There is an error', error);
+      };
+      user.save().then(onSuccess, onFailure);
+    }
   }
 });

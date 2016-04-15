@@ -3,21 +3,25 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   sessionUser: Ember.inject.service('session-user'),
    model() {
-    let self = this
-    return self.get('sessionUser.user').then(function(user) {
+    let router = this
+    return router.get('sessionUser.user').then(function(user) {
       return Ember.RSVP.hash({
-        newMessage: self.store.createRecord('message', {
+        newMessage: router.store.createRecord('message', {
           user: user,
-          conversation: self.modelFor('conversations.conversation')
+          conversation: router.modelFor('conversations.conversation')
         }),
-        messages: self.store.query('message', { param: self.modelFor('conversations.conversation') }),
+        messages: router.store.query('message', { param: router.modelFor('conversations.conversation') }),
       });
     });
   },
 
   actions: {
-    messageSent: function() {
-      this.refresh();
-    },
+    sendMessage(message){
+      message.setProperties({
+        createdAt: new Date(),
+        isSent: true,
+      });
+      message.save();
+    }
   }
-})
+});
