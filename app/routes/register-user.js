@@ -6,7 +6,7 @@ export default Ember.Route.extend({
       return user.get('id') == null;
     });
     if (newUser){
-      return newUser
+      return newUser;
     } else {
       return this.get('store').createRecord('user');
     }
@@ -17,7 +17,6 @@ export default Ember.Route.extend({
   actions:{
     saveUser(user) {
       let route = this;
-      console.log(user)
       let onSuccess = function(user) {
         if (route.get('session.isAuthenticated')){
           route.transitionTo('conversations.join-conversation');
