@@ -11,11 +11,11 @@ Router.map(function() {
   this.route('conversations', {}, function() {
     this.route('new', {});
     this.route('join');
-    this.route('conversation', { path: ':conversation_id'}, function() {
-      this.route('edit', {});
-      this.route('invite-user', {});
-      this.route('messages');
-    });
+  });
+  this.route('conversation', { path: 'conversation/:conversation_id'}, function() {
+    this.route('edit', {});
+    this.route('invite-user', {});
+    this.route('messages');
   });
 });
 
