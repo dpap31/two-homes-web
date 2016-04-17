@@ -13,7 +13,7 @@
     <ul class="nav navbar-nav navbar-right">
       {{#if session.isAuthenticated}}
         <li>{{link-to 'Home' 'application'}}</li>
-        <li>{{link-to 'Conversations' 'app.index'}}</li>
+        <li>{{link-to 'Conversations' 'index'}}</li>
         <li>{{link-to 'Profile' 'application'}}</li>
         <li><a {{action 'logout'}} href='#'>Logout</a></li>
       {{else}}
@@ -21,8 +21,8 @@
         <li><a href="#">Families</a></li>
         <li><a href="#">Professionals</a></li>
         <li><a href="#">Features</a></li>
-        <li>{{link-to 'Register' 'app.register-user'}}</li>
-        <li>{{link-to 'Login' 'app.login'}}</li>
+        <li>{{link-to 'Register' 'register-user'}}</li>
+        <li>{{link-to 'Login' 'login'}}</li>
       {{/if}}
     </ul>
   </div>

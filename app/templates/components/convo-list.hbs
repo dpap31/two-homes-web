@@ -1,0 +1,21 @@
+{{#if session.isAuthenticated}}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span class="pull-left">Conversations</span>
+    <span class="pull-right">
+      {{#link-to 'conversations.new'}}
+        {{fa-icon 'plus-circle'}}
+      {{/link-to}}
+    </span>
+    <br>
+  </div>
+<div class="list-group">
+  {{#each sortedConversations as |convo|}}
+    {{#active-link tagName='div'}}
+      {{link-to convo.code 'conversations.conversation.messages' convo  class="list-group-item"}}
+    {{/active-link}}
+  {{/each}}
+  </div>
+</div>
+{{yield}}
+{{/if}}

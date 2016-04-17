@@ -1,0 +1,16 @@
+<div class='participants col-md-12'>
+  <ul class="chat list-unstyled list-inline">
+  {{#each participants as |participant| }}
+    {{#unless (eq participant.id sessionUser.user.id)}}
+    <li class="left clearfix">
+      <span class="chat-img pull-left">
+        <img src="http://placehold.it/50/55C1E7/fff&text={{participant.initials}}" alt="User Avatar" class="img-circle" />
+        {{ participant.fullName}} {{participant.id}}
+       </span>
+    </li>
+    {{/unless}}
+  {{/each}}
+  </ul>
+</div> 
+
+{{yield}}

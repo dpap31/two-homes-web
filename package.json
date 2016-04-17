@@ -23,6 +23,7 @@
     "ember-ajax": "0.7.1",
     "ember-bootstrap": "0.6.4",
     "ember-cli": "2.4.3",
+    "ember-cli-active-link-wrapper": "0.1.0",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-babel": "^5.1.6",
     "ember-cli-dependency-checker": "^1.2.0",
@@ -35,10 +36,13 @@
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.4.2",
     "ember-export-application-global": "^1.0.5",
+    "ember-font-awesome": "2.1.0",
     "ember-link-action": "0.0.34",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
+    "ember-rl-dropdown": "^0.7.0",
     "ember-simple-auth": "1.1.0-beta.3",
+    "emberfire": "1.6.6",
     "loader.js": "^4.0.1"
   }
 }

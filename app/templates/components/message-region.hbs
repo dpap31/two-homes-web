@@ -1,0 +1,43 @@
+<div class='thread'>
+  <ol class='list-unstyled conversation'>
+  {{#each messages as |message| }}
+    {{#if message.isSent}}
+    {{#if (eq message.user.id sessionUser.user.id) }}
+    <li class='self'>
+      <div class='message'>
+        <p>
+        Message ID:{{message.createdAt}}
+        Convo ID:{{message.conversation.id}}
+        Message UID:{{message.user.id}}
+        Session UID: {{sessionUser.user.id}}
+        {{message.body}}</p>
+        <span class='help-block'>
+          <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>
+        </span>
+      </div>
+      <div class='avatar'>
+          <img src='http://placehold.it/50/55C1E7/fff&text={{message.user.initials}}' class="img-circle" />
+        </div>
+    </li>
+    {{else}}
+    <li class='other'>
+      <div class='avatar'>
+          <img src='http://placehold.it/50/98fb98/ffffff&text={{message.user.initials}}' class="img-circle" />
+        </div>
+      <div class='message'>
+        <p>
+        Convo ID:{{message.conversation.id}}
+        Message UID:{{message.user.id}}
+        Session UID: {{sessionUser.user.id}}
+        {{message.body}}</p>
+        <span class='help-block'>
+          <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>
+        </span>
+      </div>
+    </li>
+    {{/if}}
+    {{/if}}
+  {{/each}}
+  </ol>
+</div>
+{{yield}}
