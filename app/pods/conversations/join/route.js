@@ -17,7 +17,7 @@ export default Ember.Route.extend({
         // After saving the record, refresh the conversations and redirect to the added convo
         userConversation.save().then(function() {
           route.get('sessionUser.user.conversations').then(function(){
-            route.transitionTo('conversations.conversation.messages', conversationToJoin.id);
+            route.transitionTo('conversation.messages', conversationToJoin.id);
           });
         });
       };

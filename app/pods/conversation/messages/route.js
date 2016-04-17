@@ -8,7 +8,7 @@ export default Ember.Route.extend({
       return Ember.RSVP.hash({
         newMessage: router.store.createRecord('message', {
           user: user,
-          conversation: router.modelFor('conversations.conversation')
+          conversation: router.modelFor('conversation')
         }),
         messages: router.store.query('message', { param: router.modelFor('conversations.conversation') }),
       });
