@@ -1,0 +1,22 @@
+<h2>Parenting Groups</h2>
+<br>
+{{#each model.parentingGroups as |group|}}
+<div class="col-md-4 card">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    {{#link-to 'parenting-group'}}
+      Group {{group.id}}
+    {{/link-to}}
+    </div>
+      <div class="panel-body">
+      {{#each group.users as |user| }}
+        <li>{{user.firstName}} {{user.lastName}}</li>
+      {{/each}}
+      <hr>
+      {{link-to 'Invite to group' 'invite'}}
+    </div>
+  </div>
+</div>
+{{/each}}
+<button {{action 'save' model.newParentingGroup}}>Create New Parenting Group</button>
+{{outlet}}

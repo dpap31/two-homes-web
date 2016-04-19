@@ -10,5 +10,7 @@ export default DS.Model.extend({
   persona: DS.attr(),
   userConversations: DS.hasMany('user-conversations'),
   conversations: DS.hasMany('conversations', { async: true }),
+  memberships: DS.hasMany('memberships'),
+  parentingGroups: DS.hasMany('parenting-groups', { async: true }),
   messages: DS.hasMany('messages')
 });
