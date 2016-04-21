@@ -22,9 +22,7 @@ Router.map(function() {
     this.route('new-invite');
   });
   this.route('membership');
+  this.route('sign-up', { path: 'sign-up/:invite_token' });
 });
-
-
-
 
 export default Router;
