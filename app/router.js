@@ -19,7 +19,7 @@ Router.map(function() {
   });
   this.route('parenting-groups', {},)
   this.route('parenting-group', { path: 'parenting-group/:parenting_group_id'}, function(){
-    this.route('invite');
+    this.route('new-invite');
   });
   this.route('membership');
 });

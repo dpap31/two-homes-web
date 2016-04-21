@@ -1,0 +1,9 @@
+<h2>Invite Users to Group {{group.id}}</h2>
+
+<div class='input-group'>
+  <label>Email Address</label>
+  {{input value=model.newInvite.email}}
+</div>
+
+<button {{ action 'sendInvite' model.newInvite }}> Send Invite </button>
+{{outlet}}
