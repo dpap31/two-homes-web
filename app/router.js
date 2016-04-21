@@ -17,10 +17,11 @@ Router.map(function() {
     this.route('invite-user', {});
     this.route('messages');
   });
-  this.route('parenting-group');
-  this.route('invite');
+  this.route('parenting-groups', {},)
+  this.route('parenting-group', { path: 'parenting-group/:parenting_group_id'}, function(){
+    this.route('invite');
+  });
   this.route('membership');
-  this.route('dashboard');
 });
 
 

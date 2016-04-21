@@ -4,7 +4,7 @@
 <div class="col-md-4 card">
   <div class="panel panel-default">
     <div class="panel-heading">
-    {{#link-to 'parenting-group'}}
+    {{#link-to 'parenting-group' group}}
       Group {{group.id}}
     {{/link-to}}
     </div>
@@ -13,7 +13,7 @@
         <li>{{user.firstName}} {{user.lastName}}</li>
       {{/each}}
       <hr>
-      {{link-to 'Invite to group' 'invite'}}
+      {{link-to 'Invite to group' 'parenting-group.invite' group}}
     </div>
   </div>
 </div>
