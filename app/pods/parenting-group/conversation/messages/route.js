@@ -4,15 +4,14 @@ export default Ember.Route.extend({
   sessionUser: Ember.inject.service('session-user'),
    model() {
     let router = this;
-    return router.get('sessionUser.user').then(function(user) {
+    let conversationModel = router.modelFor('parenting-group.conversation')
       return Ember.RSVP.hash({
         newMessage: router.store.createRecord('message', {
-          user: user,
-          conversation: router.modelFor('conversation')
+          user: conversationModel.user,
+          conversation: conversationModel.activeConvo
         }),
-        messages: router.store.query('message', { param: router.modelFor('conversations.conversation') }),
+        messages: router.store.query('message', { param: conversationModel.activeConvo }),
       });
-    });
   },
 
   actions: {

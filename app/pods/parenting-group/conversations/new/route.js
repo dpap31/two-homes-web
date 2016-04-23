@@ -4,7 +4,9 @@ export default Ember.Route.extend({
   sessionUser: Ember.inject.service('session-user'),
 
   model(){
-    return this.store.createRecord('conversation');
+    return this.store.createRecord('conversation', {
+      parentingGroup: this.modelFor('parentingGroup')
+    });
   },
 
   actions: {
@@ -12,9 +14,9 @@ export default Ember.Route.extend({
       let router = this;
 
       let onSuccess = function(){
-        router.get('sessionUser.user.conversations').then(function(){
-          router.transitionTo('conversation.messages', conversation);
-        });
+        // router.get('sessionUser.user.conversations').then(function(){
+        //   router.transitionTo('conversation.messages', conversation);
+        // });
       };
 
       let onFailure = function(){

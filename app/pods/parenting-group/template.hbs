@@ -1,4 +1,9 @@
 {{link-to '<< Back' 'parenting-groups'}}
-<h1>Parenting Group {{model.id}}</h1>
-{{outlet}}
+<h1>Parenting Group {{model.parentingGroup.id}}</h1>
+<div class='col-md-2'>
+   {{convo-list conversations=model.conversations }}
+</div>
+<div class='col-md-10'>
+  {{outlet}}
+</div>
 

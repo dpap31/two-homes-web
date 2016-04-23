@@ -1,8 +1,8 @@
 <div class='chat-header'>
   <span class="col-md-10 pull-left">
     <h3>
-      {{#link-to 'conversation.messages'}}
-        Conversation {{conversation.code}}
+      {{#link-to 'parenting-group.conversation.messages'}}
+        Conversation {{conversation.name}}
       {{/link-to}}
     </h3>
   </span>
@@ -13,8 +13,8 @@
         {{fa-icon 'chevron-down'}}
       {{/rl-dropdown-toggle}}
       {{#rl-dropdown tagName="ul" class="dropdown-menu" closeOnChildClick="a:link"}}
-        <li>{{link-to 'Edit' 'conversation.edit' conversation}}</li>
-        <li>{{link-to 'Invite' 'conversation.invite-user' conversation}}</li>
+        <li>{{link-to 'Edit' 'parenting-group.conversation.edit' conversation}}</li>
+        <li>{{link-to 'Invite' 'parenting-group.conversation.invite-user' conversation}}</li>
       {{/rl-dropdown}}
     {{/rl-dropdown-container}}
     </h3>

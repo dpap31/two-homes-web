@@ -1,0 +1,11 @@
+
+<div class='chat-panel col-md-10 col-md-offset-1'>
+  {{chat-header conversation=model.activeConvo}}
+  {{chat-participants participants=model.parentingGroup.users}}
+</div>
+<div class='messages-region col-md-10 col-md-offset-1'>
+  {{message-region messages=model.activeConvo.messages}}
+  {{outlet}}
+</div>
+
+
