@@ -23,13 +23,8 @@ export default Ember.Route.extend({
         if (route.get('session.isAuthenticated')){
           route.transitionTo('login');
         } else{
-          let membership = route.store.createRecord('membership',{
-              parentingGroup: model.parentingGroup,
-              user: model.user
-            });
-          membership.save();
-          model.invite.set('accepted', true);
-          model.invite.save();
+          createMembership(route, model)
+          acceptInvite(model.invite)
           route.send('login', user.get('email'), user.get('password'));
         }
       };
@@ -40,3 +35,16 @@ export default Ember.Route.extend({
     }
   }
 });
+
+function createMembership(route, model){
+  let membership = route.store.createRecord('membership',{
+    parentingGroup: model.parentingGroup,
+    user: model.user
+  });
+  membership.save();
+}
+
+function acceptInvite(invite){
+  invite.set('accepted', true);
+  invite.save();
+}
