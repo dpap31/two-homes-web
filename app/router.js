@@ -17,7 +17,7 @@ Router.map(function() {
     this.route('invite-user', {});
     this.route('messages');
   });
-  this.route('parenting-groups', {},)
+  this.route('parenting-groups', {});
   this.route('parenting-group', { path: 'parenting-group/:parenting_group_id'}, function(){
     this.route('new-invite');
   });

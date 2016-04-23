@@ -17,7 +17,7 @@ export default Ember.Route.extend({
   actions:{
     sendInvite(invite){
       let router = this;
-      let parentingGroup = router.modelFor('parenting-group')
+      let parentingGroup = router.modelFor('parenting-group');
       invite.save().then(function(){
         router.transitionTo('parenting-group', parentingGroup);
       });
