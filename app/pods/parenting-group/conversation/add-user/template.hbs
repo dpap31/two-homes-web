@@ -1,5 +1,9 @@
 <ul class='list-inline'>
-  {{#each model as |user|}}
-    <li>{{user.fullName}}</li>
+  {{#each model.parentingGroup.users as |user|}}
+    <li>
+      <button {{action 'addUserToThread' user model}}>
+        {{user.fullName}}
+      </button>
+    </li>
   {{/each}}
 </ul>
