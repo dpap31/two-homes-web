@@ -7,7 +7,6 @@ export default Ember.Route.extend({
     return router.get('sessionUser.user').then(function(user) {
       return Ember.RSVP.hash({
         user: user,
-        parentingGroups: router.get('sessionUser.user.parentingGroups'),
         newParentingGroup: router.store.createRecord('parenting-group'),
       });
     });

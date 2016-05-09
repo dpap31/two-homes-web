@@ -12,7 +12,7 @@
 <div class="list-group">
   {{#each conversations as |convo|}}
     {{#active-link tagName='div'}}
-      {{link-to 'Convo' 'parenting-group.conversation.messages' convo.id  class="list-group-item"}}
+      {{link-to 'Convo' 'parenting-group.conversation.messages' convo  class="list-group-item"}}
     {{/active-link}}
   {{/each}}
   </div>
