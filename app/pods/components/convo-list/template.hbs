@@ -10,9 +10,19 @@
     <br>
   </div>
 <div class="list-group">
+  {{!-- This mess should be moved into a helper --}}
   {{#each conversations as |convo|}}
     {{#active-link tagName='div'}}
-      {{link-to 'Convo' 'parenting-group.conversation.messages' convo  class="list-group-item"}}
+      {{#link-to 'parenting-group.conversation.messages' convo class="list-group-item"}}
+        <div>
+        {{#each convo.users as |user|}}
+           {{#unless (eq user.id sessionUser.user.id)}}
+              <strong>{{user.firstName}}</strong>
+            {{/unless}}
+        {{/each}}
+        </div>
+        <em>{{truncate-text convo.messages.lastObject.body limit=15}}</em>
+      {{/link-to}}
     {{/active-link}}
   {{/each}}
   </div>
