@@ -1,9 +1,13 @@
 <h2>Invite Users to Group {{group.id}}</h2>
+<div class='col-md-5'>
+  {{#if responseMessage}}
+    <div class="alert alert-success">{{responseMessage}}</div>
+  {{/if}}
+  <div class="form-group">
+    {{input type="email" value=emailAddress class="form-control" placeholder="Email" autofocus="autofocus"}}
+  </div>
 
-<div class='input-group'>
-  <label>Email Address</label>
-  {{input value=model.newInvite.email}}
+  <button {{ action 'sendInvite' model emailAddress }} class="btn btn-primary" disabled={{isDisabled}}>Send invitation</button>
 </div>
-
-<button {{ action 'sendInvite' model.newInvite }}> Send Invite </button>
 {{outlet}}
+
