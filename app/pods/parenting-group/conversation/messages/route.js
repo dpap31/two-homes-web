@@ -39,6 +39,10 @@ export default Ember.Route.extend({
         $('.thread').scrollTop(1E10);
         router.refresh();
       });
+    },
+    willTransition() {
+      let message = this.modelFor(this.routeName).newMessage
+      message.rollbackAttributes();
     }
   }
 });
