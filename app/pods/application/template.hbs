@@ -1,7 +1,37 @@
-{{app-navbar}}
-<div class='container'>
-  <div class='col-md-12'>
-    {{outlet}}
-  </div>
-</div>
+{{#paper-nav-container}}
+  {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2" locked-open="gt-sm"}}
+    {{#paper-toolbar}}
+      <div class="md-toolbar-tools">
+        <strong>TwoHomes</strong>
+      </div>
+    {{/paper-toolbar}}
 
+    {{#paper-content}}
+      {{#paper-list}}
+        {{#if session.isAuthenticated}}
+          {{#paper-item}}Introduction{{/paper-item}}
+          {{#paper-item action='logout' }}Logout{{/paper-item}}
+        {{else}}
+          {{#paper-item action='goTo' param='register-user'}}Register{{/paper-item}}
+          {{#paper-item action='goTo' param='login'}}Login{{/paper-item}}
+        {{/if}}
+      {{/paper-list}}
+    {{/paper-content}}
+  {{/paper-sidenav}}
+
+  <div layout="column" tabindex="-1" role="main" flex>
+    {{#paper-toolbar}}
+      <div class="md-toolbar-tools">
+        {{#paper-sidenav-toggle as |toggle|}}
+          {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+        {{/paper-sidenav-toggle}}
+        <span class="md-breadcrumb-page">Title</span>
+        {{#paper-item}}Another link{{/paper-item}}
+      </div>
+    {{/paper-toolbar}}
+
+    {{#paper-content class="md-padding"}}
+      {{outlet}}
+    {{/paper-content}}
+  </div>
+{{/paper-nav-container}}

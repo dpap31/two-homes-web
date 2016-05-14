@@ -1,23 +1,5 @@
-@import "bootstrap";
+@import 'ember-paper';
 /*login*/
-
-.login-registration-form{
-  margin-top: 18%;
-  padding: 10%;
-  border-radius: 10%;
-  border: 1px solid #e7e7e7;
-}
-
-.login-register-header{
-  text-align: center;
-  margin-bottom: 8%;
-  margin-top: 3%;
-}
-
-.login-registration-form button{
-  margin-bottom: 5%;
-  margin-top: 5%;
-}
 
 /* Conversation */
 .chat-panel{

@@ -2,9 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   sessionUser: Ember.inject.service('session-user'),
-   model(params) {
+   model() {
     let router = this;
-    let conversation = router.modelFor('parenting-group.conversation')
+    let conversation = router.modelFor('parenting-group.conversation');
     return Ember.RSVP.hash({
       newMessage: router.store.createRecord('message', {
         user: router.get('sessionUser.user'),
@@ -22,7 +22,7 @@ export default Ember.Route.extend({
         isSent: true,
       });
       message.save().then(function(){
-        $('.thread').scrollTop(1E10);
+        Ember.$('.thread').scrollTop(1E10);
         router.refresh();
       });
     },
@@ -36,12 +36,12 @@ export default Ember.Route.extend({
       });
 
       message.save().then(function(){
-        $('.thread').scrollTop(1E10);
+        Ember.$('.thread').scrollTop(1E10);
         router.refresh();
       });
     },
     willTransition() {
-      let message = this.modelFor(this.routeName).newMessage
+      let message = this.modelFor(this.routeName).newMessage;
       message.rollbackAttributes();
     }
   }

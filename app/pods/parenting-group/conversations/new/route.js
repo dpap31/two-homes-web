@@ -11,7 +11,7 @@ export default Ember.Route.extend({
 
   actions: {
     save(conversation){
-      let router = this;
+      //let router = this;
 
       let onSuccess = function(){
         // router.get('sessionUser.user.conversations').then(function(){

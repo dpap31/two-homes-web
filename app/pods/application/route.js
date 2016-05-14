@@ -7,6 +7,9 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       this.get('session').authenticate('authenticator:oauth2', identification, password).catch((reason) => {
         this.set('errorMessage', reason.error || reason);
       });
+    },
+    goTo(route){
+      this.transitionTo(route);
     }
   }
 });

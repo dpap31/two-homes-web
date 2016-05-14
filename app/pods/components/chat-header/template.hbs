@@ -6,6 +6,9 @@
       {{/link-to}}
     </h3>
   </span>
+  {{#if isAddingUsersToThread}}
+    {{autocomplete-input conversation=conversation key="firstName" model="user"}}
+  {{/if}}
   <span class="col-md-1 pull-right">
     <h3>
     {{#rl-dropdown-container class="dropdown"}}
@@ -13,7 +16,7 @@
         {{fa-icon 'chevron-down'}}
       {{/rl-dropdown-toggle}}
       {{#rl-dropdown tagName="ul" class="dropdown-menu" closeOnChildClick="a:link"}}
-      <li>{{link-to 'Add user' 'parenting-group.conversation.add-user' conversation}}</li>
+        <li><a {{action 'toggleIsAddingUsersToThread'}} href='#'>Add user</a></li>
       {{/rl-dropdown}}
     {{/rl-dropdown-container}}
     </h3>
