@@ -1,31 +1,11 @@
-<h3 class='login-register-header'>Login or {{link-to 'Sign Up' 'register-user'}}</h3>
-{{!-- <form {{action 'login' identification password on='submit'}}> --}}
-  {{paper-input label="Email" type="email" value=identification icon="email" icon-class="person" required=true}}
-  {{paper-input placeholder="Password" type="password" value=password icon="lock"}}
-  <button {{ action 'login' identification password on='submit' }} class='btn btn-primary btn-lg btn-block'> Login </button>
-  {{!-- {{#paper-button raised=true primary=true action="login" identification=identification password=password}}
-  Login
-  {{/paper-button}} --}}
-{{!-- </form> --}}
-
-<div class='col-md-6 col-md-offset-1'>
-  <div class='login-registration-form'>
-		<h3 class='login-register-header'>Login or {{link-to 'Sign Up' 'register-user'}}</h3>
-	  <form {{action 'login' identification password on='submit'}}>
-	    <div class='input-group'>
-	        <span class='input-group-addon'><i class='fa fa-user'></i></span>
-	        {{input id='Email' placeholder='Enter Login' value=identification class='form-control'}}
-	    </div>
-      <span class='help-block'></span>
-      <div class='input-group'>
-        <span class='input-group-addon'><i class='fa fa-lock'></i></span>
-        {{input id='password' placeholder='Enter Password' type='password' value=password class='form-control'}}
-      </div>
-      {{#if errorMessage}}
-        <span class='help-block'>Invalid login</span>
-      {{/if}}
-      <button {{ action 'login' identification password on='submit' }} class='btn btn-primary btn-lg btn-block'> Login </button>
-	  </form>
-	</div>
-</div>
+{{#paper-content class="md-padding"}}
+  <h3 class='login-register-header'>Login or {{link-to 'Sign Up' 'register-user'}}</h3>
+  <form {{action 'login' identification password on='submit'}}>
+    {{paper-input label="Email" type="email" value=identification icon="email" icon-class="person" required=true}}
+    {{paper-input placeholder="Password" type="password" value=password icon="lock"}}
+    {{#paper-button raised=true action="login"}}
+      Login
+    {{/paper-button}}
+  </form>
+{{/paper-content}}
 {{outlet}}

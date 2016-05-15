@@ -1,7 +1,31 @@
 <h2>Parenting Groups</h2>
 <br>
-{{sessionUser.user}}
 {{#each model.user.parentingGroups as |group|}}
+  <div class="home-card">
+  {{#paper-card}}
+    {{#paper-card-title}}
+      {{#paper-card-title-text}}
+        {{#link-to 'parenting-group' group}}
+          <h2>Group {{group.id}}</h2>
+        {{/link-to}}
+        {{paper-divider}}
+        <ul>
+          {{#each group.users as |user| }}
+            <li>{{user.firstName}} {{user.lastName}}</li>
+          {{/each}}
+        </ul>
+        <p>The titles of Washed Out's breakthrough song and the first single from Paracosm share the...</p>
+      {{/paper-card-title-text}}
+      {{#paper-card-title-media}}
+        <img class="md-media-lg" src="">
+      {{/paper-card-title-media}}
+    {{/paper-card-title}}
+    <div class="md-actions" layout="row" layout-align="end center">
+      {{#paper-button}}Invite{{/paper-button}}
+      {{#paper-button}}View{{/paper-button}}
+    </div>
+  {{/paper-card}}
+  </div>
 <div class="col-md-4 card">
   <div class="panel panel-default">
     <div class="panel-heading">
