@@ -12,11 +12,10 @@ export default Ember.Route.extend({
     }
   },
 
-  session: Ember.inject.service('session'),
-
   actions:{
-    saveUser(user) {
+    saveUser() {
       let route = this;
+      let user = route.modelFor(route.routeName);
       let onSuccess = function(user) {
         if (route.get('session.isAuthenticated')){
           route.transitionTo('conversations.join-conversation');

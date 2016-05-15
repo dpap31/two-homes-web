@@ -1,3 +1,13 @@
+<h3 class='login-register-header'>Login or {{link-to 'Sign Up' 'register-user'}}</h3>
+{{!-- <form {{action 'login' identification password on='submit'}}> --}}
+  {{paper-input label="Email" type="email" value=identification icon="email" icon-class="person" required=true}}
+  {{paper-input placeholder="Password" type="password" value=password icon="lock"}}
+  <button {{ action 'login' identification password on='submit' }} class='btn btn-primary btn-lg btn-block'> Login </button>
+  {{!-- {{#paper-button raised=true primary=true action="login" identification=identification password=password}}
+  Login
+  {{/paper-button}} --}}
+{{!-- </form> --}}
+
 <div class='col-md-6 col-md-offset-1'>
   <div class='login-registration-form'>
 		<h3 class='login-register-header'>Login or {{link-to 'Sign Up' 'register-user'}}</h3>
