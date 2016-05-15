@@ -1,4 +1,5 @@
 <h2>Parenting Groups</h2>
+{{#paper-button raised=true primary=true action="save" iconButton=true}} {{paper-icon "library add"}} New Group{{/paper-button}}
 <br>
 {{#each model.user.parentingGroups as |group|}}
   <div class="home-card">
@@ -21,27 +22,14 @@
       {{/paper-card-title-media}}
     {{/paper-card-title}}
     <div class="md-actions" layout="row" layout-align="end center">
-      {{#paper-button}}Invite{{/paper-button}}
-      {{#paper-button}}View{{/paper-button}}
+      {{#link-to 'parenting-group.new-invite' group}}
+        {{#paper-button}}Invite{{/paper-button}}
+      {{/link-to}}
+      {{#link-to 'parenting-group.new-invite' group}}
+        {{#paper-button}}View{{/paper-button}}
+      {{/link-to}}
     </div>
   {{/paper-card}}
   </div>
-<div class="col-md-4 card">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-    {{#link-to 'parenting-group' group}}
-      Group {{group.id}}
-    {{/link-to}}
-    </div>
-      <div class="panel-body">
-      {{#each group.users as |user| }}
-        <li>{{user.firstName}} {{user.lastName}}</li>
-      {{/each}}
-      <hr>
-      {{link-to 'Invite to group' 'parenting-group.new-invite' group}}
-    </div>
-  </div>
-</div>
 {{/each}}
-<button {{action 'save' model.newParentingGroup}}>Create New Parenting Group</button>
 {{outlet}}

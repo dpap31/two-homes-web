@@ -13,18 +13,17 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    save(newParentingGroup){
+    save(){
       let router = this;
+      let model = router.modelFor(router.routeName);
       let onSuccess = function(){
-        let model = router.modelFor(router.routeName);
-        model.parentingGroups.reload();
+        router.get('sessionUser.user.parentingGroups').reload();
       };
 
       let onFailure = function(){
         console.log('ERROR');
       };
-
-      newParentingGroup.save().then(onSuccess, onFailure);
+      model.newParentingGroup.save().then(onSuccess, onFailure);
     }
   }
 });
