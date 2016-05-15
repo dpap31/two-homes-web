@@ -1,5 +1,10 @@
+<div class='container'>
 <h2>Parenting Groups</h2>
-{{#paper-button raised=true primary=true action="save" iconButton=true}} {{paper-icon "library add"}} New Group{{/paper-button}}
+
+ {{#paper-button raised=true primary=true action="save" iconButton=true}} {{paper-icon "library add"}} New Group{{/paper-button}}
+</div>
+<br>
+{{paper-divider}}
 <br>
 {{#each model.user.parentingGroups as |group|}}
   <div class="home-card">
