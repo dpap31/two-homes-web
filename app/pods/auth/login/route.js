@@ -4,17 +4,11 @@ const { Route, inject } = Ember;
 
 export default Ember.Route.extend({
   session: inject.service(),
-  model() {
-    return {
-      email: '',
-      password: ''
-    };
-  },
   actions: {
-    doLogin() {
-      const user = this.get('currentModel');
+    doLogin(identification, password) {
+      console.log(identification);
       this.get('session').authenticate(
-        'authenticator:oauth2', user.email, user.password
+        'authenticator:oauth2', identification, password
       );
     }
   }
