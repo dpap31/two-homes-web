@@ -14,7 +14,15 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
+    DS: {
+      host: 'http://localhost:3000',
+      namespace: 'v1'
+    },
+    'ember-simple-auth': {
+      authenticationRoute: 'auth.login',
+      routeIfAlreadyAuthenticated: 'parenting-groups',
+      routeAfterAuthentication: 'parenting-groups'
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

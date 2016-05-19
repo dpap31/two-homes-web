@@ -1,7 +1,17 @@
 import Ember from 'ember';
 
+const { Route, inject } = Ember;
+
 export default Ember.Route.extend({
-  sessionUser: Ember.inject.service('session-user'),
+
+  session: inject.service(),
+  beforeModel() {
+    if(!this.get('session').get('isAuthenticated')) {
+      this.transitionTo('auth.login');
+    }
+  },
+
+
   model() {
     let router = this;
     return router.get('sessionUser.user').then(function(user) {
@@ -27,4 +37,3 @@ export default Ember.Route.extend({
     }
   }
 });
-

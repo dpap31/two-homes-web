@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
+const { Route, inject } = Ember;
+
 export default Ember.Route.extend({
+  session: inject.service(),
   model() {
     return {
       email: '',
@@ -9,7 +12,10 @@ export default Ember.Route.extend({
   },
   actions: {
     doLogin() {
-      alert('login attempted');
+      const user = this.get('currentModel');
+      this.get('session').authenticate(
+        'authenticator:oauth2', user.email, user.password
+      );
     }
   }
 });
