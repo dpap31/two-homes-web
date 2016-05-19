@@ -1,11 +1,52 @@
-
-<div class='chat-panel col-md-10 col-md-offset-1'>
+<div class="chatscreen">
+  <div class="md-padding chatscreen-messages">
+  {{#paper-card}}
+    {{#paper-card-content}}
+      {{#paper-list class="conversation"}}
+        {{#each model.messages as |message|}}
+          {{#if message.isSent}}
+            {{#if (eq message.user.id sessionUser.user.id) }}
+              {{#paper-item class="md-3-line self"}}
+                <div class='message'>
+                  <div class="md-list-item-text">
+                    <h3>{{message.body}}</h3>
+                    <p>
+                      <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>
+                      Message UID: {{message.user.id}}
+                      Session UID:{{sessionUser.user.id}}
+                    </p>
+                  </div>
+                </div>
+                <img src='http://placehold.it/50/98fb98/ffffff&text={{message.user.initials}}' class="md-avatar avatar" />
+              {{/paper-item}}
+              {{else}}
+              {{#paper-item class="md-3-line other"}}
+                <img src='http://placehold.it/50/55C1E7/fff&text={{message.user.initials}}' class="md-avatar avatar" />
+                <div class="message">
+                  <div class="md-list-item-text">
+                    <h3>{{message.body}}</h3>
+                    <p>
+                      <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>
+                      Message UID: {{message.user.id}}
+                      Session UID:{{sessionUser.user.id}}
+                    </p>
+                  </div>
+                </div>
+              {{/paper-item}}
+            {{/if}}
+          {{/if}}
+        {{/each}}
+      {{/paper-list}}
+    {{/paper-card-content}}
+  {{/paper-card}}
+  </div>
+</div>
+{{outlet}}
+{{!-- <div class='chat-panel col-md-10 col-md-offset-1'>
   {{chat-header conversation=model}}
   {{chat-participants participants=model.users}}
 </div>
 <div class='messages-region col-md-10 col-md-offset-1'>
   {{message-region messages=model.messages}}
   {{outlet}}
-</div>
-
-
+</div> --}}

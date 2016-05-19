@@ -1,31 +1,21 @@
-{{#if session.isAuthenticated}}
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <span class="pull-left">Conversations</span>
-    <span class="pull-right">
+  {{#if session.isAuthenticated}}
+  {{#paper-menu as |menu|}}
+    {{#paper-button target=menu raised=true action="toggleMenu" icon-button=true}}
+        {{paper-icon "more-horiz" class="md-menu-origin"}}
+    {{/paper-button}}
+  {{else}}
+    {{#paper-menu-item}}
       {{#link-to 'parenting-group.conversations.new'}}
-        {{fa-icon 'plus-circle'}}
+        <span>New Conversation</span>
       {{/link-to}}
-    </span>
-    <br>
-  </div>
-<div class="list-group">
-  {{!-- This mess should be moved into a helper --}}
-  {{#each conversations as |convo|}}
-    {{#active-link tagName='div'}}
-      {{#link-to 'parenting-group.conversation.messages' convo class="list-group-item"}}
-        <div>
-        {{#each convo.users as |user|}}
-           {{#unless (eq user.id sessionUser.user.id)}}
-              <strong>{{user.firstName}}</strong>
-            {{/unless}}
-        {{/each}}
-        </div>
-        <em>{{truncate-text convo.messages.lastObject.body limit=15}}</em>
+    {{/paper-menu-item}}
+    {{paper-divider}}
+    {{#each conversations as |convo|}}
+      {{#paper-menu-item}}
+      {{#link-to 'parenting-group.conversation.messages' convo}}
+        <span>Conversation {{convo.id}}</span>
       {{/link-to}}
-    {{/active-link}}
-  {{/each}}
-  </div>
-</div>
-{{yield}}
+      {{/paper-menu-item}}
+    {{/each}}
+  {{/paper-menu}}
 {{/if}}

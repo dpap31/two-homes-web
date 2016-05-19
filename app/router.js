@@ -23,6 +23,11 @@ Router.map(function() {
   });
   this.route('membership');
   this.route('sign-up', { path: 'sign-up/:invite_token' });
+
+  this.route('auth', function() {
+    this.route('login');
+    this.route('register');
+  });
 });
 
 export default Router;

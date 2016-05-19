@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   sessionUser: Ember.inject.service('session-user'),
-   model() {
+  model() {
     let router = this;
     let conversation = router.modelFor('parenting-group.conversation');
     return Ember.RSVP.hash({
@@ -15,8 +15,9 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    sendMessage(message){
+    sendMessage(){
       let router = this;
+      let message = router.modelFor(router.routeName).newMessage;
       message.setProperties({
         createdAt: new Date(),
         isSent: true,
