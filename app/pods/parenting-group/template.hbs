@@ -4,6 +4,12 @@
    {{convo-list conversations=model.conversations }}
 </div>
 <div class='col-md-10'>
+  {{#if authManager}}
+    Logged in as {{authManager}}
+  {{else}}
+    No session found.
+  {{/if}}
   {{outlet}}
+
 </div>
 

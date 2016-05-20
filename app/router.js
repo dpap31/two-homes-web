@@ -19,7 +19,7 @@ Router.map(function() {
       this.route('messages');
     });
   });
-  this.route('membership');
+  //Logged out
   this.route('auth', function() {
     this.route('login');
     this.route('register');

@@ -5,7 +5,11 @@ const { Route, inject } = Ember;
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
 
-  session: inject.service(),
+  session: Ember.inject.service('session'),
+
+  model(){
+    return this.get('session')
+  },
 
   actions:{
     login(identification, password){

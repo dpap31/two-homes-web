@@ -8,9 +8,7 @@
 
     {{#paper-content}}
       {{#paper-list}}
-      {{session}}
-        {{#if session.isAuthenticated}}
-          {{#paper-item}}Introduction{{/paper-item}}
+        {{#if model.isAuthenticated}}
           {{#paper-item action='goTo' param='parenting-groups' }}Parenting Groups{{/paper-item}}
           {{#paper-item action='logout' }}Logout{{/paper-item}}
         {{else}}
