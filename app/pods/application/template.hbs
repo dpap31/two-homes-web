@@ -8,13 +8,14 @@
 
     {{#paper-content}}
       {{#paper-list}}
+      {{session}}
         {{#if session.isAuthenticated}}
           {{#paper-item}}Introduction{{/paper-item}}
           {{#paper-item action='goTo' param='parenting-groups' }}Parenting Groups{{/paper-item}}
           {{#paper-item action='logout' }}Logout{{/paper-item}}
         {{else}}
-          {{#paper-item action='goTo' param='register-user'}}Register{{/paper-item}}
-          {{#paper-item action='goTo' param='login'}}Login{{/paper-item}}
+          {{#paper-item action='goTo' param='auth.register'}}Register{{/paper-item}}
+          {{#paper-item action='goTo' param='auth.login'}}Login{{/paper-item}}
         {{/if}}
       {{/paper-list}}
     {{/paper-content}}

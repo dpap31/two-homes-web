@@ -1,7 +1,8 @@
 import Ember from 'ember';
+const { Route, inject } = Ember;
 
 export default Ember.Route.extend({
-  sessionUser: Ember.inject.service('session-user'),
+  session: inject.service(),
   actions: {
     search(joinCode){
       let route = this;

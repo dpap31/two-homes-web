@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
+const { Route, inject } = Ember;
+
 export default Ember.Route.extend({
-  sessionUser: Ember.inject.service('session-user'),
+  session: inject.service(),
+
   model() {
     let router = this;
     let conversation = router.modelFor('parenting-group.conversation');

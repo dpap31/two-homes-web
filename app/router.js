@@ -6,8 +6,6 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('register-user', {});
-  this.route('login', {});
   this.route('parenting-groups', {});
   this.route('parenting-group', { path: 'parenting-group/:parenting_group_id'}, function(){
     this.route('new-invite');
@@ -22,11 +20,10 @@ Router.map(function() {
     });
   });
   this.route('membership');
-  this.route('sign-up', { path: 'sign-up/:invite_token' });
-
   this.route('auth', function() {
     this.route('login');
     this.route('register');
+    this.route('sign-up', { path: 'sign-up/:invite_token' });
   });
 });
 
