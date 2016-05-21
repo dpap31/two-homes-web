@@ -1,8 +1,9 @@
 import Ember from 'ember';
-const { Route, inject } = Ember;
+const { inject } = Ember;
 
 export default Ember.Route.extend({
   session: inject.service(),
+
   actions: {
     search(joinCode){
       let route = this;

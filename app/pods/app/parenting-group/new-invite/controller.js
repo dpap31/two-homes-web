@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
   actions:{
     sendInvite(){
       let controller = this;
-      let invite = controller.get('model')
+      let invite = controller.get('model');
       invite.set('email', controller.get('emailAddress'));
       invite.save().then(function(){
         controller.set('responseMessage', `Invite sent to: ${controller.get('emailAddress')}`);

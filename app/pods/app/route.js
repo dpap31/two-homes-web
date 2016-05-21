@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import config from '../../config/environment';
 
-const { Route, inject } = Ember;
+const { inject } = Ember;
 
 export default Ember.Route.extend({
 
@@ -20,7 +20,7 @@ export default Ember.Route.extend({
       }
     }).then((raw) => {
       return raw.json().then((data) => {
-        const sessionUser = router.store.findRecord('user', data['data']['id'])
+        const sessionUser = router.store.findRecord('user', data['data']['id']);
         this.set('session.sessionUser', sessionUser);
       });
     });

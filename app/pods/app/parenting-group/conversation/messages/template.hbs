@@ -4,12 +4,10 @@
     {{#paper-card-content}}
       {{#paper-list class="conversation"}}
         {{#each model as |message|}}
-          {{#if message.isSent}}
-            {{#if (eq message.user.id sessionUser.user.id) }}
-              {{chat.chat-bubbles.self message=message currentUser=sessionUser.user }}
-            {{else}}
-              {{chat.chat-bubbles.other message=message currentUser=sessionUser.user }}
-            {{/if}}
+          {{#if (eq message.user.id sessionUser.user.id) }}
+            {{chat.chat-bubbles.self message=message currentUser=sessionUser.user }}
+          {{else}}
+            {{chat.chat-bubbles.other message=message currentUser=sessionUser.user }}
           {{/if}}
           {{else}}
             <h3>No messages yet.</h3>
@@ -20,27 +18,4 @@
   </div>
 </div>
 {{chat.new-message conversation_id=model.firstObject.conversation.id}}
-{{!-- <div layout='flex' class='md-padding'>
-  <div flex=1>{{paper-input label='Message' value=model.newMessage.body}}</div>
-  <div>{{#paper-button action='sendMessage' disabled=isDisabled raised=true classNames='md-primary'}}Send{{/paper-button}}</div>
-</div> --}}
 {{outlet}}
-
-{{!-- <div class='chat-panel col-md-10 col-md-offset-1'>
-  {{chat-header conversation=model}}
-  {{chat-participants participants=model.users}}
-</div>
-<div class='messages-region col-md-10 col-md-offset-1'>
-  {{message-region messages=model.messages}}
-  {{outlet}}
-</div> --}}
-
-
-{{!-- <div class='form-group'>
-    {{textarea value=model.newMessage.body insert-newline='sendMessageOnEnter' class='form-control' rows='4' id='message-text' placeholder='Write your message..'}}
-  </div>
-  <button class='btn btn-primary send-btn'{{action 'sendMessage' model.newMessage}} disabled={{isDisabled}}>{{fa-icon 'paper-plane'}}   Send</button>
-{{outlet}}
- --}}
-
-
