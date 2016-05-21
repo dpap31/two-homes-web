@@ -9,10 +9,14 @@ export default Ember.Route.extend({
     let route = this;
     const conversation = route.modelFor('app.parenting-group.conversation');
     let conversation_id = conversation.get('id');
-    return route.store.query('message', {filter: { 'conversation_id': conversation_id } }).then(function(messages) {
-      messages.get()
-      return messages;
+    // return route.store.query('message', {filter: { 'conversation_id' : conversation_id } }).then(function(messages) {
+    //   console.log(messages.get('length'))
+    //   return messages;
+    // });
+    conversation.get('messages').then(function(m){
+      console.log(m);
     });
+    return conversation.get('messages');
   },
   // model: function(params, transition, queryParams)  {
   //       var post = this.modelFor('post');
