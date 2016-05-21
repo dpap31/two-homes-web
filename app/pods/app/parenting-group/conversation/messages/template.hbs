@@ -6,34 +6,9 @@
         {{#each model as |message|}}
           {{#if message.isSent}}
             {{#if (eq message.user.id sessionUser.user.id) }}
-              {{#paper-item class="md-3-line self"}}
-                <div class='message'>
-                  <div class="md-list-item-text">
-                    <h3>{{message.body}}</h3>
-                    <p>
-                      <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>
-                      Message Convo ID: {{message.coversation.id}}
-                      Message UID: {{message.user.id}}
-                      Session UID:{{sessionUser.user.id}}
-                    </p>
-                  </div>
-                </div>
-                <img src='http://placehold.it/50/98fb98/ffffff&text={{message.user.initials}}' class="md-avatar avatar" />
-              {{/paper-item}}
-              {{else}}
-              {{#paper-item class="md-3-line other"}}
-                <img src='http://placehold.it/50/55C1E7/fff&text={{message.user.initials}}' class="md-avatar avatar" />
-                <div class="message">
-                  <div class="md-list-item-text">
-                    <h3>{{message.body}}</h3>
-                    <p>
-                      <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>
-                      Message UID: {{message.user.id}}
-                      Session UID:{{sessionUser.user.id}}
-                    </p>
-                  </div>
-                </div>
-              {{/paper-item}}
+              {{chat.chat-bubbles.self message=message currentUser=sessionUser.user }}
+            {{else}}
+              {{chat.chat-bubbles.other message=message currentUser=sessionUser.user }}
             {{/if}}
           {{/if}}
           {{else}}
@@ -44,6 +19,7 @@
   {{/paper-card}}
   </div>
 </div>
+{{chat.new-message conversation_id=model.firstObject.conversation.id}}
 {{!-- <div layout='flex' class='md-padding'>
   <div flex=1>{{paper-input label='Message' value=model.newMessage.body}}</div>
   <div>{{#paper-button action='sendMessage' disabled=isDisabled raised=true classNames='md-primary'}}Send{{/paper-button}}</div>
