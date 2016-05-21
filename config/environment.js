@@ -1,5 +1,4 @@
 /* jshint node: true */
-
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'two-homes-web',
@@ -15,7 +14,15 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
+    DS: {
+      host: 'http://localhost:3000',
+      namespace: 'v1'
+    },
+    'ember-simple-auth': {
+      authenticationRoute: 'auth.login',
+      routeIfAlreadyAuthenticated: 'app.parenting-groups',
+      routeAfterAuthentication: 'app.parenting-groups'
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -34,6 +41,14 @@ module.exports = function(environment) {
     // Testem prefers this...
     ENV.baseURL = '/';
     ENV.locationType = 'none';
+    ENV.contentSecurityPolicy = {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self' http://fonts.gstatic.com",
+      'connect-src': "'self'",
+      'img-src': "'self' data:",
+      'media-src': "'self'"
+    }
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;

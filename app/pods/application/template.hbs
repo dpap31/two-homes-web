@@ -1,10 +1,44 @@
-{{app-navbar}}
-<div class='container'>
-  <div class='col-md-2'>
-    {{convo-list}}
-  </div>
-  <div class='col-md-10'>
-    {{outlet}}
-  </div>
-</div>
+{{#paper-nav-container}}
+  {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2" locked-open="gt-sm"}}
+    {{#paper-toolbar}}
+      <div class="md-toolbar-tools">
+       <p>TwoHomes</p>
+      </div>
+    {{/paper-toolbar}}
 
+    {{#paper-content}}
+      {{#paper-list}}
+        {{#if session.isAuthenticated}}
+          {{#paper-item action='goTo' param='app.parenting-groups' }}Parenting Groups{{/paper-item}}
+          {{#paper-item action='logout' }}Logout{{/paper-item}}
+        {{else}}
+          {{#paper-item action='goTo' param='auth.register'}}Register{{/paper-item}}
+          {{#paper-item action='goTo' param='auth.login'}}Login{{/paper-item}}
+        {{/if}}
+      {{/paper-list}}
+    {{/paper-content}}
+  {{/paper-sidenav}}
+
+  <div layout="column" tabindex="-1" role="main" flex>
+    {{#paper-toolbar}}
+      <div class="md-toolbar-tools">
+        {{#paper-sidenav-toggle as |toggle|}}
+          {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+        {{/paper-sidenav-toggle}}
+        <span class="md-breadcrumb-page">Title</span>
+        <div class='paper-right'>
+          {{#if session.isAuthenticated}}
+            {{#paper-button action='logout' }}Logout{{/paper-button}}
+          {{else}}
+            {{#paper-button action='goTo' param='auth.register'}}Register{{/paper-button}}
+            {{#paper-button action='goTo' param='auth.login'}}Login{{/paper-button}}
+          {{/if}}
+        </div>
+      </div>
+    {{/paper-toolbar}}
+
+    {{#paper-content class="md-padding"}}
+      {{outlet}}
+    {{/paper-content}}
+  </div>
+{{/paper-nav-container}}

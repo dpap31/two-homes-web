@@ -1,0 +1,14 @@
+{{#paper-item class="md-3-line other"}}
+  <img src='http://placehold.it/50/55C1E7/fff&text={{message.user.initials}}' class="avatar" />
+  <div class="message">
+    <div class="md-list-item-text">
+      <h3>{{message.body}}</h3>
+      <p>
+        <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>
+        Message UID: {{message.user.id}}
+        Session UID:{{currentUser.id}}
+      </p>
+    </div>
+  </div>
+{{/paper-item}}
+{{yield}}

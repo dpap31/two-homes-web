@@ -1,0 +1,8 @@
+<h2>Invite Users to Group {{group.id}}</h2>
+{{#if responseMessage}}
+  <div class="alert alert-success">{{responseMessage}}</div>
+{{/if}}
+{{paper-input label="Email" type="email" value=emailAddress icon="email" icon-class="email" required=true}}
+{{#paper-button disabled=isDisabled primary=true raised=true action='sendInvite'}}Send invitation{{/paper-button}}
+{{outlet}}
+

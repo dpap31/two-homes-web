@@ -1,0 +1,21 @@
+<div class="chatscreen">
+  <div class="md-padding chatscreen-messages">
+  {{#paper-card}}
+    {{#paper-card-content}}
+      {{#paper-list class="conversation"}}
+        {{#each model as |message|}}
+          {{#if (eq message.user.id sessionUser.user.id) }}
+            {{chat.chat-bubbles.self message=message currentUser=sessionUser.user }}
+          {{else}}
+            {{chat.chat-bubbles.other message=message currentUser=sessionUser.user }}
+          {{/if}}
+          {{else}}
+            <h3>No messages yet.</h3>
+        {{/each}}
+      {{/paper-list}}
+    {{/paper-card-content}}
+  {{/paper-card}}
+  </div>
+</div>
+{{chat.new-message conversation_id=model.firstObject.conversation.id}}
+{{outlet}}

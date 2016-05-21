@@ -6,10 +6,10 @@
     <li class='self'>
       <div class='message'>
         <p>
-        Message ID:{{message.createdAt}}
+        Message ID:{{message.id}}
         Convo ID:{{message.conversation.id}}
-        Message UID:{{message.user.id}}
-        Session UID: {{sessionUser.user.id}}
+        User ID:{{message.user.id}}
+        Session User ID: {{sessionUser.user.id}}
         {{message.body}}</p>
         <span class='help-block'>
           <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>

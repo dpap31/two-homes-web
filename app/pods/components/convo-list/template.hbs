@@ -1,21 +1,21 @@
-{{#if session.isAuthenticated}}
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <span class="pull-left">Conversations</span>
-    <span class="pull-right">
-      {{#link-to 'conversations.new'}}
-        {{fa-icon 'plus-circle'}}
+{{!--   {{#if session.isAuthenticated}}
+  {{#paper-menu as |menu|}}
+    {{#paper-button target=menu raised=true action="toggleMenu" icon-button=true}}
+        {{paper-icon "more-horiz" class="md-menu-origin"}}
+    {{/paper-button}}
+  {{else}}
+    {{#paper-menu-item}}
+      {{#link-to 'app.parenting-group.conversations.new'}}
+        <span>New Conversation</span>
       {{/link-to}}
-    </span>
-    <br>
-  </div>
-<div class="list-group">
-  {{#each sortedConversations as |convo|}}
-    {{#active-link tagName='div'}}
-      {{link-to convo.code 'conversation.messages' convo  class="list-group-item"}}
-    {{/active-link}}
-  {{/each}}
-  </div>
-</div>
-{{yield}}
-{{/if}}
+    {{/paper-menu-item}}
+    {{paper-divider}}
+    {{#each conversations as |convo|}}
+      {{#paper-menu-item}}
+      {{#link-to 'app.parenting-group.conversation.messages' convo.id}}
+        <span>Conversation {{convo.id}}</span>
+      {{/link-to}}
+      {{/paper-menu-item}}
+    {{/each}}
+  {{/paper-menu}}
+{{/if}} --}}

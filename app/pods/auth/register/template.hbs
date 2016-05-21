@@ -1,0 +1,26 @@
+{{#paper-content class="md-padding"}}
+  {{#paper-card}}
+    {{#paper-card-title}}
+      {{#paper-card-title-text}}
+        <h3 class="login-register-header">{{link-to 'Login' 'auth.login'}} or Sign Up</h3>
+      {{/paper-card-title-text}}
+    {{/paper-card-title}}
+  {{#paper-card-content}}
+    {{paper-input label="First Name" value=model.firstName icon="person" icon-class="name"}}
+    {{paper-input label="Last Name" value=model.lastName icon="person" icon-class="name"}}
+    {{paper-input label="Email" type="email" value=model.email icon="email" icon-class="email" required=true}}
+    {{paper-input placeholder="Password" type="password" value=model.password icon="lock"}}
+    {{#paper-select placeholder="Persona" model=model.persona}}
+        {{#paper-option value="user"}}
+          User
+        {{/paper-option}}
+        {{#paper-option value="moderator"}}
+          Moderator
+        {{/paper-option}}
+    {{/paper-select}}
+    {{#paper-button raised=true action="doRegister"}}Register{{/paper-button}}
+    {{/paper-card-content}}
+  {{/paper-card}}
+{{/paper-content}}
+
+{{outlet}}

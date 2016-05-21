@@ -1,0 +1,14 @@
+{{#paper-item class="md-3-line self"}}
+  <div class='message'>
+    <div class="md-list-item-text">
+      <h3>{{message.body}}</h3>
+      <p>
+        <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>
+        Message Convo ID: {{message.coversation.id}}
+        Message UID: {{message.user.id}}
+        Session UID:{{currentUser.id}}
+      </p>
+    </div>
+  </div>
+  <img src='http://placehold.it/50/98fb98/ffffff&text={{message.user.initials}}' class="md-avatar avatar" />
+{{/paper-item}}
