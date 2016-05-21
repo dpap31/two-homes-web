@@ -1,21 +1,21 @@
-  {{#if session.isAuthenticated}}
+{{!--   {{#if session.isAuthenticated}}
   {{#paper-menu as |menu|}}
     {{#paper-button target=menu raised=true action="toggleMenu" icon-button=true}}
         {{paper-icon "more-horiz" class="md-menu-origin"}}
     {{/paper-button}}
   {{else}}
     {{#paper-menu-item}}
-      {{#link-to 'parenting-group.conversations.new'}}
+      {{#link-to 'app.parenting-group.conversations.new'}}
         <span>New Conversation</span>
       {{/link-to}}
     {{/paper-menu-item}}
     {{paper-divider}}
     {{#each conversations as |convo|}}
       {{#paper-menu-item}}
-      {{#link-to 'parenting-group.conversation.messages' convo}}
+      {{#link-to 'app.parenting-group.conversation.messages' convo.id}}
         <span>Conversation {{convo.id}}</span>
       {{/link-to}}
       {{/paper-menu-item}}
     {{/each}}
   {{/paper-menu}}
-{{/if}}
+{{/if}} --}}

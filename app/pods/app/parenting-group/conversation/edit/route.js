@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  sessionUser: Ember.inject.service('session-user'),
+  session: Ember.inject.service(),
   actions: {
     save(conversation){
       console.log(conversation);

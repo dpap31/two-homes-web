@@ -9,7 +9,7 @@
     {{#paper-content}}
       {{#paper-list}}
         {{#if model.isAuthenticated}}
-          {{#paper-item action='goTo' param='parenting-groups' }}Parenting Groups{{/paper-item}}
+          {{#paper-item action='goTo' param='app.parenting-groups' }}Parenting Groups{{/paper-item}}
           {{#paper-item action='logout' }}Logout{{/paper-item}}
         {{else}}
           {{#paper-item action='goTo' param='auth.register'}}Register{{/paper-item}}

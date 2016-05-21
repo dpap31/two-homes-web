@@ -1,9 +1,10 @@
+{{model}}
 <div class="chatscreen">
   <div class="md-padding chatscreen-messages">
   {{#paper-card}}
     {{#paper-card-content}}
       {{#paper-list class="conversation"}}
-        {{#each model.messages as |message|}}
+        {{#each model as |message|}}
           {{#if message.isSent}}
             {{#if (eq message.user.id sessionUser.user.id) }}
               {{#paper-item class="md-3-line self"}}
@@ -12,6 +13,7 @@
                     <h3>{{message.body}}</h3>
                     <p>
                       <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>
+                      Message Convo ID: {{message.coversation.id}}
                       Message UID: {{message.user.id}}
                       Session UID:{{sessionUser.user.id}}
                     </p>
@@ -41,7 +43,12 @@
   {{/paper-card}}
   </div>
 </div>
+{{!-- <div layout='flex' class='md-padding'>
+  <div flex=1>{{paper-input label='Message' value=model.newMessage.body}}</div>
+  <div>{{#paper-button action='sendMessage' disabled=isDisabled raised=true classNames='md-primary'}}Send{{/paper-button}}</div>
+</div> --}}
 {{outlet}}
+
 {{!-- <div class='chat-panel col-md-10 col-md-offset-1'>
   {{chat-header conversation=model}}
   {{chat-participants participants=model.users}}
@@ -50,3 +57,13 @@
   {{message-region messages=model.messages}}
   {{outlet}}
 </div> --}}
+
+
+{{!-- <div class='form-group'>
+    {{textarea value=model.newMessage.body insert-newline='sendMessageOnEnter' class='form-control' rows='4' id='message-text' placeholder='Write your message..'}}
+  </div>
+  <button class='btn btn-primary send-btn'{{action 'sendMessage' model.newMessage}} disabled={{isDisabled}}>{{fa-icon 'paper-plane'}}   Send</button>
+{{outlet}}
+ --}}
+
+

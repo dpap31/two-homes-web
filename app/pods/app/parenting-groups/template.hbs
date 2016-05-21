@@ -11,7 +11,7 @@
   {{#paper-card}}
     {{#paper-card-title}}
       {{#paper-card-title-text}}
-        {{#link-to 'parenting-group' group}}
+        {{#link-to 'app.parenting-group' group}}
           <h2>Group {{group.id}}</h2>
         {{/link-to}}
         {{paper-divider}}
@@ -27,10 +27,10 @@
       {{/paper-card-title-media}}
     {{/paper-card-title}}
     <div class="md-actions" layout="row" layout-align="end center">
-      {{#link-to 'parenting-group.new-invite' group}}
+      {{#link-to 'app.parenting-group.new-invite' group}}
         {{#paper-button}}Invite{{/paper-button}}
       {{/link-to}}
-      {{#link-to 'parenting-group.new-invite' group}}
+      {{#link-to 'app.parenting-group.new-invite' group}}
         {{#paper-button}}View{{/paper-button}}
       {{/link-to}}
     </div>
