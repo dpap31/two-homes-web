@@ -1,30 +1,21 @@
 import Ember from 'ember';
 
 const { Route, inject } = Ember;
+const { service } = Ember.inject;
 
 export default Ember.Route.extend({
-  session: inject.service(),
+  session: service('session'),
+  sessionUser: service('session-user'),
 
   model() {
     let route = this;
-    let convo = route.modelFor('app.parenting-group.conversation');
-    //route.store.findAll('message')
-    let convo_id = convo.get('id');
-    // route.store.query('message', { filter: { 'conversation': convo } })
-    return route.store.query('message', {
-         orderBy: 'conversation',
-         equalTo: convo_id
-       });
-    //console.log(conversation.get('messages.length'));
+    let convo = route.modelFor('app.parenting-group.conversation').get('id');
+    let messages = route.store.query('message', {
+      orderBy: 'conversation',
+      equalTo: convo
+    });
+    return messages
 
-    // return route.store.query('message', {filter: { 'conversation_id' : conversation_id } }).then(function(messages) {
-    //   console.log(messages.get('length'))
-    //   return messages;
-    // });
-    // conversation.get('messages').then(function(m){
-    //   console.log(m);
-    // });
-    // return conversation.get('messages');
   },
   // model: function(params, transition, queryParams)  {
   //       var post = this.modelFor('post');

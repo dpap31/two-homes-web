@@ -20,8 +20,8 @@ module.exports = function(environment) {
     },
     'ember-simple-auth': {
       authenticationRoute: 'auth.login',
-      routeIfAlreadyAuthenticated: 'parenting-groups',
-      routeAfterAuthentication: 'parenting-groups'
+      routeIfAlreadyAuthenticated: 'app.parenting-groups',
+      routeAfterAuthentication: 'app.parenting-groups'
     },
     APP: {
       // Here you can pass flags/options to your application instance

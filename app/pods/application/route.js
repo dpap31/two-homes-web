@@ -4,14 +4,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 const { Route, inject } = Ember;
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
-
-  session: Ember.inject.service('session'),
-
-  model(){
-    return this.get('session')
-  },
-
-  actions:{
+  actions: {
     login(identification, password){
       this.get('session').authenticate('authenticator:oauth2', identification, password).catch((reason) => {
         this.set('errorMessage', reason.error || reason);

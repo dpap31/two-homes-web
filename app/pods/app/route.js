@@ -6,6 +6,7 @@ const { Route, inject } = Ember;
 export default Ember.Route.extend({
 
   session: inject.service(),
+  sessionUser: inject.service('session-user'),
 
   beforeModel() {
     let router = this;

@@ -1,4 +1,3 @@
-{{model}}
 <div class="chatscreen">
   <div class="md-padding chatscreen-messages">
   {{#paper-card}}
@@ -37,6 +36,8 @@
               {{/paper-item}}
             {{/if}}
           {{/if}}
+          {{else}}
+            <h3>No messages yet.</h3>
         {{/each}}
       {{/paper-list}}
     {{/paper-card-content}}
