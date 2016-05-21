@@ -7,16 +7,24 @@ export default Ember.Route.extend({
 
   model() {
     let route = this;
-    const conversation = route.modelFor('app.parenting-group.conversation');
-    let conversation_id = conversation.get('id');
+    let convo = route.modelFor('app.parenting-group.conversation');
+    //route.store.findAll('message')
+    let convo_id = convo.get('id');
+    // route.store.query('message', { filter: { 'conversation': convo } })
+    return route.store.query('message', {
+         orderBy: 'conversation',
+         equalTo: convo_id
+       });
+    //console.log(conversation.get('messages.length'));
+
     // return route.store.query('message', {filter: { 'conversation_id' : conversation_id } }).then(function(messages) {
     //   console.log(messages.get('length'))
     //   return messages;
     // });
-    conversation.get('messages').then(function(m){
-      console.log(m);
-    });
-    return conversation.get('messages');
+    // conversation.get('messages').then(function(m){
+    //   console.log(m);
+    // });
+    // return conversation.get('messages');
   },
   // model: function(params, transition, queryParams)  {
   //       var post = this.modelFor('post');

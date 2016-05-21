@@ -7,5 +7,5 @@ export default DS.Model.extend({
     defaultValue() { return false; }
   }),
   user: DS.belongsTo('user'),
-  conversation: DS.belongsTo('conversation', { async: true }),
+  conversation: DS.belongsTo('conversation'),
 });
