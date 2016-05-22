@@ -15,6 +15,7 @@ export default Ember.Component.extend({
       let message = createNewMessage(component, store);
       message.save().then(function(){
         component.set('messageBody', '');
+        Ember.$('.thread').scrollTop(1E10);
       });
     }
   }

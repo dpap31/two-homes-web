@@ -1,25 +1,4 @@
-{{link-to '<< Back' 'app'}}
 <h1>Parenting Group {{model.id}}</h1>
-<div class='col-md-2'>
-  {{#paper-menu as |menu|}}
-     {{#paper-button target=menu raised=true action="toggleMenu" icon-button=true}}
-         {{paper-icon "more-horiz" class="md-menu-origin"}}
-     {{/paper-button}}
-   {{else}}
-     {{#paper-menu-item}}
-       {{#link-to 'app.parenting-group.conversations.new'}}
-         <span>New Conversation</span>
-       {{/link-to}}
-     {{/paper-menu-item}}
-     {{paper-divider}}
-     {{#each model.conversations as |convo|}}
-       {{#paper-menu-item}}
-       {{#link-to 'app.parenting-group.conversation.messages' convo.id}}
-         <span>Conversation {{convo.id}}</span>
-       {{/link-to}}
-       {{/paper-menu-item}}
-     {{/each}}
-   {{/paper-menu}}
-</div>
+{{conversation-selector conversations=model.conversations}}
 {{outlet}}
 

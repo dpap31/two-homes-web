@@ -23,13 +23,15 @@
   border: 1px solid #e7e7e7;
   background: #eeeeee;
 }
-.messages-region .thread{
+.thread{
+  float: right;
   padding: 20px;
-  height: 300px;
-  width: 100%;
+  height: 450px;
+  width: 70%;
   display: inline-block;
-  margin-bottom: 30px;
-  overflow: scroll
+  margin-bottom: 0px;
+  overflow: scroll;
+  background-color: aliceblue;
 }
 
 /*Messages*/
@@ -81,13 +83,29 @@
 .message .help-block{
   font-size: 70%
 }
-
+.self .message{
+    margin-left: auto;
+  }
 .message {
   background: white;
   padding: 10px;
   border-radius: 2px;
   box-shadow: 0 1px 2px rgba(black, 0.2);
+  margin: 5px;
 }
 .send-btn{
   margin-bottom:20px
+}
+
+.convo-menu{
+  width: 20%;
+  float:left;
+  background-color: aliceblue;
+}
+.new-message{
+  clear: both;
+  width: 70%;
+  float: right;
+  margin-top: 0px;
+  background-color: ivory;
 }
