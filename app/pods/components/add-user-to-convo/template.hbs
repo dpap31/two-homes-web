@@ -1,0 +1,15 @@
+{{#paper-menu position="target-right target" as |menu|}}
+  {{#paper-button target=menu raised=true action="toggleMenu" icon-button=true}}
+    {{paper-icon "add-box" class="md-menu-origin"}}
+  {{/paper-button}}
+{{else}}
+  {{#each users as |user|}}
+    {{#paper-menu-item action="addUserToThread" param=user.id }}
+      <p style="width: 120px;">{{user.fullName}}</p>
+    {{/paper-menu-item}}
+  {{/each}}
+{{/paper-menu}}
+
+{{convo.parentingGroup.users.length}}
+{{convo.users.length}}
+{{yield}}
