@@ -1,12 +1,3 @@
 {{add-user-to-convo users=model.parentingGroup.users convo=model}}
 
-
-{{!-- {{#paper-select  onchange=(action "alert" value="") on-open=userLabelCallback item-label-callback=userLabelCallback placeholder="Add a user" model=selectedUser as |items|}}
-  {{#each model.parentingGroup.users as |user|}}
-    {{#paper-option value=user.fullName}}
-      {{user.fullName}}
-    {{/paper-option}}
-  {{/each}}
-{{/paper-select}} --}}
-
 {{outlet}}
