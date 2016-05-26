@@ -1,5 +1,7 @@
 {{#paper-card class="recipients"}}
-    {{chat.message-recipients conversation=model}}
-    {{add-user-to-convo conversation=model}}
+<div layout='flex' class='md-padding'>
+  <div flex=1>{{chat.message-recipients conversation=model}}</div>
+  <div>{{add-user-to-convo conversation=model}}</div>
+</div>
 {{/paper-card}}
 {{outlet}}
