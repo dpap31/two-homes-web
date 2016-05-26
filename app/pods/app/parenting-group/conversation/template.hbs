@@ -1,3 +1,5 @@
-{{add-user-to-convo users=model.parentingGroup.users convo=model}}
-
+{{#paper-card class="recipients"}}
+    {{chat.message-recipients conversation=model}}
+    {{add-user-to-convo conversation=model}}
+{{/paper-card}}
 {{outlet}}

@@ -1,20 +1,11 @@
 {{#paper-menu position="target-right target" as |menu|}}
-  {{#paper-button target=menu raised=true action="toggleMenu" icon-button=true}}
+  {{#paper-button raised='true' target=menu primary=true action="toggleMenu" icon-button=true}}
     {{paper-icon "add-box" class="md-menu-origin"}}
   {{/paper-button}}
 {{else}}
-  {{#each newUsers as |user|}}
+  {{#each pgUsers as |user|}}
     {{#paper-menu-item action="addUserToThread" param=user.id }}
-        <p style="width: 120px;"></p>
-    {{/paper-menu-item}}
-  {{/each}}
-  {{#each convoUsers as |user|}}
-    {{#paper-menu-item disabled="true" action="addUserToThread" param=user.id }}
-      <p style="width: 120px;">{{user.fullName}}</p>
+        <p style="width: 120px;">{{user.fullName}}</p>
     {{/paper-menu-item}}
   {{/each}}
 {{/paper-menu}}
-
-{{newUsers}}
-{{newUsers.length}}
-{{yield}}

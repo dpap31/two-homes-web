@@ -3,7 +3,7 @@
   {{#paper-card class="thread"}}
     {{#paper-card-content}}
       {{#paper-list class="conversation"}}
-        {{#each model as |message|}}
+        {{#each model.messages as |message|}}
           {{#if (eq message.user.id sessionUser.user.id) }}
             {{chat.chat-bubbles.self message=message currentUser=sessionUser.user }}
           {{else}}
@@ -16,7 +16,7 @@
     {{/paper-card-content}}
   {{/paper-card}}
   {{#paper-card class="new-message"}}
-    {{chat.new-message conversation_id=model.firstObject.conversation.id}}
+    {{chat.new-message conversation_id=model.convo_id}}
   {{/paper-card}}
   </div>
 </div>

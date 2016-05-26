@@ -8,12 +8,15 @@ export default Ember.Route.extend({
 
   model() {
     let route = this;
-    let convo = route.modelFor('app.parenting-group.conversation').get('id');
+    let convo_id = route.modelFor('app.parenting-group.conversation').get('id');
     let messages = route.store.query('message', {
       orderBy: 'conversation',
-      equalTo: convo
+      equalTo: convo_id
     });
-    return messages;
+    return Ember.RSVP.hash({
+      convo_id: convo_id,
+      messages: messages
+    });
   },
 });
 

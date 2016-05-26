@@ -29,6 +29,7 @@
   height: 450px;
   width: 70%;
   display: inline-block;
+  margin-top: 0px;
   margin-bottom: 0px;
   overflow: scroll;
   background-color: aliceblue;
@@ -108,4 +109,10 @@
   float: right;
   margin-top: 0px;
   background-color: ivory;
+}
+.recipients{
+  width: 70%;
+  float: right;
+  background-color: ivory;
+  margin-bottom: 0px;
 }
