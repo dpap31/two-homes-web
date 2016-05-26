@@ -3,8 +3,7 @@
     {{#each conversations as |convo|}}
       {{#paper-item class="md-3-line" action=(action "goToConvo" convo)}}
       <img src='http://placehold.it/50/55C1E7/fff&text={{convo.users.lastObject.initials}}' class="md-avatar" />
-      {{!-- {{#link-to 'app.parenting-group.conversation.messages' convo.id}} --}}
-        <div class="md-list-item-text">
+      <div class="md-list-item-text">
         <h3>
           {{#each convo.users as |user|}}
              {{#unless (eq user.id sessionUser.user.id)}}
@@ -16,7 +15,6 @@
             {{truncate-text convo.messages.firstObject.body limit=15}}
           </p>
         </div>
-        {{!-- {{/link-to}} --}}
       {{/paper-item}}
       {{paper-divider}}
     {{/each}}
