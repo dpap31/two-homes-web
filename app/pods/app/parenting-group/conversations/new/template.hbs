@@ -1,3 +1,25 @@
+{{#paper-card class="recipients"}}
+<div layout='flex' class='md-padding'>
+  <div flex=1>{{chat.message-recipients conversation=model}}</div>
+  <div>{{add-user-to-convo conversation=model}}</div>
+</div>
+{{/paper-card}}
+<div class="chatscreen">
+  <div class="chatscreen-messages">
+  {{#paper-card class="thread"}}
+    {{#paper-card-content}}
+    <div class='no-messages'>
+     <img src="http://image005.flaticon.com/1/png/512/3/3879.png">
+     <h4>It's been slow, no messages yet.</h4>
+    </div>
+    {{/paper-card-content}}
+  {{/paper-card}}
+  {{#paper-card class="new-message"}}
+    {{chat.new-message conversation_id=model.convo_id}}
+  {{/paper-card}}
+  </div>
+</div>
+
 <h3> New Conversation </h3>
 <div class='input-group'>
   <label>Name</label>

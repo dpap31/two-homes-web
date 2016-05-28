@@ -1,0 +1,10 @@
+<h3>{{title}}</h3>
+<ul>
+  {{#each conversation.users as |participant| }}
+    {{#unless (eq participant.id sessionUser.user.id)}}
+      <li id='member'>{{ participant.fullName }}</li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+{{yield}}

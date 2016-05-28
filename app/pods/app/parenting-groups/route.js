@@ -26,6 +26,14 @@ export default Ember.Route.extend({
         console.log('ERROR');
       };
       model.newParentingGroup.save().then(onSuccess, onFailure);
+    },
+
+    goToPg: function(pg) {
+      this.transitionTo("app.parenting-group", pg);
+    },
+
+    goToPgInvite: function(pg) {
+      this.transitionTo("app.parenting-group.new-invite", pg);
     }
   }
 });

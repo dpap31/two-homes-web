@@ -2,29 +2,27 @@ import Ember from 'ember';
 const { inject } = Ember;
 
 export default Ember.Route.extend({
-  session: inject.service(),
 
   model(){
-    return this.store.createRecord('conversation', {
-      parentingGroup: this.modelFor('parentingGroup')
+    let convo = this.store.createRecord('conversation', {
+      parentingGroup: this.modelFor('app.parentingGroup')
     });
+    return convo.save()
   },
 
   actions: {
-    save(conversation){
-      //let router = this;
+    save(){
+      let router = this;
+      let conversation = this.get('currentModel');
 
       let onSuccess = function(){
-        // router.get('sessionUser.user.conversations').then(function(){
-        //   router.transitionTo('conversation.messages', conversation);
-        // });
+        router.transitionTo('conversation.messages', conversation);
       };
 
       let onFailure = function(){
         console.log('ERROR');
       };
-
       conversation.save().then(onSuccess, onFailure);
-    }
+    },
   }
 });

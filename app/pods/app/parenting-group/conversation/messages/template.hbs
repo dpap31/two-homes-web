@@ -3,20 +3,23 @@
   {{#paper-card class="thread"}}
     {{#paper-card-content}}
       {{#paper-list class="conversation"}}
-        {{#each model as |message|}}
+        {{#each model.messages as |message|}}
           {{#if (eq message.user.id sessionUser.user.id) }}
             {{chat.chat-bubbles.self message=message currentUser=sessionUser.user }}
           {{else}}
             {{chat.chat-bubbles.other message=message currentUser=sessionUser.user }}
           {{/if}}
           {{else}}
-            <h3>No messages yet.</h3>
+            <div class='no-messages'>
+              <img src="http://image005.flaticon.com/1/png/512/3/3879.png">
+              <h4>It has been slow, no messages yet.</h4>
+            </div>
         {{/each}}
       {{/paper-list}}
     {{/paper-card-content}}
   {{/paper-card}}
   {{#paper-card class="new-message"}}
-    {{chat.new-message conversation_id=model.firstObject.conversation.id}}
+    {{chat.new-message conversation_id=model.convo_id}}
   {{/paper-card}}
   </div>
 </div>

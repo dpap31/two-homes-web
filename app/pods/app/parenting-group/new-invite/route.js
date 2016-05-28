@@ -7,7 +7,7 @@ export default Ember.Route.extend({
     let router = this;
     return router.store.createRecord('invite', {
       sender: router.get('sessionUser.user'),
-      parentingGroup: router.modelFor('parenting-group'),
+      parentingGroup: router.modelFor('app.parenting-group'),
     });
   },
 });
