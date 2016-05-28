@@ -1,29 +1,27 @@
-<div class='col-md-6 col-md-offset-1'>
-<h2>Signup</h2>
-  {{model.parentingGroup.id}}
-    <form>
-      <div class='form-group'>
-        <label class='sr-only'>First Name</label>
-        {{input value=model.user.firstName class='form-control' placeholder='First Name'}}
-      </div>
-      <div class='form-group'>
-        <label class='sr-only'>Last Name</label>
-        {{input value=model.user.lastName class='form-control' placeholder='Last Name'}}
-      </div>
-      <div class='form-group'>
-        <label class='sr-only'>Email</label>
-        {{input value=model.user.email class='form-control' placeholder='Email'}}
-      </div>
-      <div class='form-group'>
-        <label class='sr-only'>Password</label>
-        {{input type='password' value=model.user.password class='form-control' placeholder='Password'}}
-      </div>
-      <div class='form-group'>
-        <label class='sr-only'>Persona</label>
-        {{input value=model.user.persona class='form-control' placeholder='Persona'}}
-      </div>
-      <button {{ action 'save' model.user}} class='btn btn-primary btn-lg btn-block'> Register </button>
-    </form>
-</div>
+{{#paper-content class="md-padding"}}
+  {{#paper-card}}
+    {{#paper-card-title}}
+      {{#paper-card-title-text}}
+        <h3 class="login-register-header">Sign Up</h3>
+      {{/paper-card-title-text}}
+    {{/paper-card-title}}
+  {{#paper-card-content}}
+    {{paper-input label="First Name" value=model.user.firstName icon="person" icon-class="name"}}
+    {{paper-input label="Last Name" value=model.user.lastName icon="person" icon-class="name"}}
+    {{paper-input label="Email" type="email" value=model.user.email icon="email" icon-class="email" required=true}}
+    {{paper-input placeholder="Password" type="password" value=model.user.password icon="lock"}}
+    {{#paper-select placeholder="Persona" model=model.user.persona}}
+        {{#paper-option value="user"}}
+          User
+        {{/paper-option}}
+        {{#paper-option value="moderator"}}
+          Moderator
+        {{/paper-option}}
+    {{/paper-select}}
+    {{#paper-button raised=true action="save" param=model.user}}Register{{/paper-button}}
+    {{/paper-card-content}}
+  {{/paper-card}}
+{{/paper-content}}
 
 {{outlet}}
+

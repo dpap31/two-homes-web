@@ -7,6 +7,19 @@ export default Ember.Component.extend({
     return this.get('conversation.parentingGroup.users');
   }),
 
+  convoUsers: Ember.computed( function(){
+    return this.get('conversation.users');
+  }),
+
+  diff: Ember.computed( function(){
+    this.get('conversation.parentingGroup.users').then(function(pg){
+      this.get('conversation.users').then(function(convo){
+        console.log(pg);
+        console.log(convo);
+      });
+    });
+  }),
+
   actions: {
     addUserToThread(user_id){
       var store = this.get('store');

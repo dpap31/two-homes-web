@@ -2,7 +2,7 @@
 <ul>
   {{#each conversation.users as |participant| }}
     {{#unless (eq participant.id sessionUser.user.id)}}
-      <li id='participant'>{{ participant.fullName }}</li>
+      <li id='member'>{{ participant.fullName }}</li>
     {{/unless}}
   {{/each}}
 </ul>

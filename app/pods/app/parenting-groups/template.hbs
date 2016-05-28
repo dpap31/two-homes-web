@@ -1,7 +1,10 @@
-<div class='container'>
-<h2>Parenting Groups</h2>
-
- {{#paper-button raised=true primary=true action="save" iconButton=true}} {{paper-icon "library add"}} New Group{{/paper-button}}
+<div layout='flex' class='md-padding'>
+  <div flex=1>
+    <h2>Parenting Groups</h2>
+  </div>
+  <div>
+    {{#paper-button raised=true primary=true action="save" iconButton=true class='new-pg'}} {{paper-icon "library add"}} New Group{{/paper-button}}
+  </div>
 </div>
 <br>
 {{paper-divider}}
@@ -9,30 +12,21 @@
 {{#each model.user.parentingGroups as |group|}}
   <div class="home-card">
   {{#paper-card}}
-    {{#paper-card-title}}
+  {{#paper-toolbar class='pg-header'}}
+    {{#paper-button action='goToPg' param=group}}<h2>Group {{group.id}}</h2>{{/paper-button}}
+  {{/paper-toolbar}}
+    {{#paper-card-title class="card-body"}}
       {{#paper-card-title-text}}
-        {{#link-to 'app.parenting-group' group}}
-          <h2>Group {{group.id}}</h2>
-        {{/link-to}}
-        {{paper-divider}}
         <ul>
           {{#each group.users as |user| }}
-            <li>{{user.firstName}} {{user.lastName}}</li>
+            <li id="member">{{user.firstName}} {{user.lastName}}</li>
           {{/each}}
         </ul>
-        <p>The titles of Washed Out's breakthrough song and the first single from Paracosm share the...</p>
       {{/paper-card-title-text}}
-      {{#paper-card-title-media}}
-        <img class="md-media-lg" src="">
-      {{/paper-card-title-media}}
     {{/paper-card-title}}
     <div class="md-actions" layout="row" layout-align="end center">
-      {{#link-to 'app.parenting-group.new-invite' group}}
-        {{#paper-button}}Invite{{/paper-button}}
-      {{/link-to}}
-      {{#link-to 'app.parenting-group.new-invite' group}}
-        {{#paper-button}}View{{/paper-button}}
-      {{/link-to}}
+        {{#paper-button action='goToPgInvite' param=group}}Invite{{/paper-button}}
+        {{#paper-button action='goToPg' param=group}}View{{/paper-button}}
     </div>
   {{/paper-card}}
   </div>
