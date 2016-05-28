@@ -23,11 +23,19 @@ export default Ember.Component.extend({
   actions: {
     addUserToThread(user_id){
       var store = this.get('store');
+      let convo = this.get('conversation');
+      console.log(convo)
+
+      let onSuccess = function(){
+        convo.get('users').reload();
+      };
+
       let userConversation = store.createRecord('user-conversation',{
-        conversation: this.get('convo'),
+        conversation: convo,
         user: store.peekRecord('user', user_id),
       });
-      userConversation.save();
+
+      userConversation.save().then(onSuccess);
     },
   }
 });

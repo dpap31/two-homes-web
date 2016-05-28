@@ -14,6 +14,12 @@ export default Ember.Route.extend({
       Ember.run.scheduleOnce('afterRender', this, function () {
         Ember.$('.thread').scrollTop(1E10);
       });
+    },
+    willTransition(){
+      let convoUsersCount = this.get("currentModel.users.length")
+      if (convoUsersCount == 1){
+        this.get("currentModel").destroyRecord()
+      }
     }
   }
 });

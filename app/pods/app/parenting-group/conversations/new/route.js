@@ -4,9 +4,10 @@ const { inject } = Ember;
 export default Ember.Route.extend({
 
   model(){
-    return this.store.createRecord('conversation', {
+    let convo = this.store.createRecord('conversation', {
       parentingGroup: this.modelFor('app.parentingGroup')
     });
+    return convo.save()
   },
 
   actions: {
@@ -21,8 +22,7 @@ export default Ember.Route.extend({
       let onFailure = function(){
         console.log('ERROR');
       };
-
       conversation.save().then(onSuccess, onFailure);
-    }
+    },
   }
 });
