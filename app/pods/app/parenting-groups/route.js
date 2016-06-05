@@ -29,7 +29,12 @@ export default Ember.Route.extend({
     },
 
     goToPg: function(pg) {
-      this.transitionTo("app.parenting-group", pg);
+      let firstConversation = pg.get('conversations.firstObject.id');
+      if (firstConversation === undefined) {
+        this.transitionTo("app.parenting-group.conversations.new", pg)
+      } else {
+        this.transitionTo("app.parenting-group.conversation.messages", pg, firstConversation)
+      }
     },
 
     goToPgInvite: function(pg) {
