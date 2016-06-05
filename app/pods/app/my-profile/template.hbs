@@ -1,0 +1,17 @@
+{{#paper-content class="md-padding"}}
+  {{#paper-card}}
+    {{#paper-card-title}}
+      {{#paper-card-title-text}}
+        <h3 class="login-register-header">My Profile</h3>
+      {{/paper-card-title-text}}
+    {{/paper-card-title}}
+  {{#paper-card-content}}
+    {{paper-input label="First Name" value=model.firstName icon="person" icon-class="name"}}
+    {{paper-input label="Last Name" value=model.lastName icon="person" icon-class="name"}}
+    {{paper-input label="Email" type="email" value=model.email icon="email" icon-class="email" required=true}}
+    {{#paper-button raised=true action="update"}}Update{{/paper-button}}
+    {{/paper-card-content}}
+  {{/paper-card}}
+{{/paper-content}}
+
+{{outlet}}

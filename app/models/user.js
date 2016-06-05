@@ -3,8 +3,8 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   firstName: DS.attr(),
   lastName: DS.attr(),
-  fullName: DS.attr(),
-  initials: DS.attr(),
+  fullName: DS.attr('string', { serialize: false }),
+  initials: DS.attr('string', { serialize: false }),
   email: DS.attr(),
   password: DS.attr(),
   persona: DS.attr(),

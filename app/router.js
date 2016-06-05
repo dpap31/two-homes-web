@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('app', {}, function(){
+    this.route('my-profile');
     this.route('parenting-groups');
     this.route('parenting-group', { path: 'parenting-group/:parenting_group_id'}, function(){
       this.route('new-invite');
