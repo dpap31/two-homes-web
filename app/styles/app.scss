@@ -155,11 +155,11 @@
     margin-top: 5px;
     float: left;
     border-radius: 12px;
-    border: 1px solid #3f51b5;
-    color: #3f51b5;
+    border: 1px solid black;
+    color: black;
     &:hover {
       color: white;
-      background-color: #3f51b5;
+      background-color: black;
     }
   }
 
@@ -171,6 +171,7 @@
 .pg-header{
   text-align: center;
   button{
+    background-color: #b3b3b3;
     margin:0px !important;
   }
 }
