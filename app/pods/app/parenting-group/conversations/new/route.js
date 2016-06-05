@@ -1,5 +1,4 @@
 import Ember from 'ember';
-const { inject } = Ember;
 
 export default Ember.Route.extend({
 
@@ -7,7 +6,7 @@ export default Ember.Route.extend({
     let convo = this.store.createRecord('conversation', {
       parentingGroup: this.modelFor('app.parentingGroup')
     });
-    return convo.save()
+    return convo.save();
   },
 
   actions: {

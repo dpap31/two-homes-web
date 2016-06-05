@@ -24,7 +24,6 @@ export default Ember.Component.extend({
     addUserToThread(user_id){
       var store = this.get('store');
       let convo = this.get('conversation');
-      console.log(convo)
 
       let onSuccess = function(){
         convo.get('users').reload();
