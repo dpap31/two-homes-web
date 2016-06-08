@@ -8,6 +8,12 @@ module.exports = function(environment) {
     firebase: 'https://flickering-inferno-9463.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
+
+    flashMessageDefaults: {
+     timeout: 500000,
+     //extendedTimeout: 375
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
