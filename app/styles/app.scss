@@ -1,10 +1,9 @@
 @import 'ember-paper';
 
-
-
 .paper-right{
   margin-left: auto;
 }
+
 /*login*/
 .home-card{
   max-height: 400px;
@@ -17,6 +16,28 @@
   margin-top: 20px;
   margin-right: 30px;
 }
+
+/* Notifications */
+
+.notifiction-center {
+  display:block;
+  position: fixed;
+  z-index: 10000;
+  .notification {
+    top: 35px;
+    opacity: 0;
+    transition: margin-top 375ms, top 300ms, opacity 300ms;
+    &.active {
+      top: 0;
+      opacity: 1
+    }
+    &.exiting {
+      opacity: 0;
+      margin-top: -40px;
+    }
+  }
+}
+
 /* Conversation */
 .chat-panel{
   border: 1px solid #e7e7e7;
@@ -186,6 +207,22 @@
   filter: alpha(opacity=20);
   img{
     width: 300px;
+  }
+}
+
+//Notificaitons
+.notification{
+  width: 70%;
+  margin: 0 auto;
+  &.active{
+    .md-toolbar-tools{
+      background-color: green;
+    }
+    &.danger{
+      .md-toolbar-tools{
+        background-color: red;
+      }
+    }
   }
 }
 

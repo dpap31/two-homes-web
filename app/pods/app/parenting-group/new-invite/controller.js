@@ -9,11 +9,19 @@ export default Ember.Controller.extend({
     sendInvite(){
       let controller = this;
       let invite = controller.get('model');
-      invite.set('email', controller.get('emailAddress'));
-      invite.save().then(function(){
-        controller.set('responseMessage', `Invite sent to: ${controller.get('emailAddress')}`);
+
+      let onSuccess = function(){
+        controller.get('flashMessages').success(`Invitation sent to: ${controller.get('emailAddress')}`);
         controller.set('emailAddress', '');
-      });
+
+      };
+
+      let onFailure = function(){
+        controller.get('flashMessages').danger('Error sending invitation. Try again later.');
+      };
+
+      invite.set('email', controller.get('emailAddress'));
+      invite.save().then(onSuccess, onFailure);
     }
   }
 });
