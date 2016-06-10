@@ -19,18 +19,22 @@ export default Ember.Route.extend({
     save(user) {
       let route = this;
       let model = route.modelFor(route.routeName);
+
       let onSuccess = function(user) {
         if (route.get('session.isAuthenticated')){
           route.transitionTo('login');
-        } else{
+        } else {
           createMembership(route, model);
           acceptInvite(model.invite);
           route.send('login', user.get('email'), user.get('password'));
+          route.get('flashMessages').success(`Success! Welcome to parenting group ${model.parentingGroup.get('id')}`);
         }
       };
-      let onFailure = function(error) {
-        console.log('There is an error', error);
+
+      let onFailure = function() {
+        route.get('flashMessages').danger('Registration error. Please try again.');
       };
+
       user.save().then(onSuccess, onFailure);
     }
   }

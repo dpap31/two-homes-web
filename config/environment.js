@@ -10,7 +10,7 @@ module.exports = function(environment) {
     locationType: 'auto',
 
     flashMessageDefaults: {
-     timeout: 5000,
+     timeout: 3000,
      extendedTimeout: 375
     },
 

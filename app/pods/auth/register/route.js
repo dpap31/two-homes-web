@@ -7,9 +7,19 @@ export default Ember.Route.extend({
 
   actions: {
    doRegister() {
-      this.get('currentModel').save().then(() => {
-        this.transitionTo('auth.login');
-      });
+      let route = this;
+      let onFailure = function() {
+        route.get('flashMessages').danger('Registration error. Please try again.');
+      };
+
+      let onSuccess = function() {
+        let user = route.get('currentModel');
+        route.send('login', user.get('email'), user.get('password'));
+        route.transitionTo('auth.login');
+        route.get('flashMessages').success('Welcome to TwoHomes.');
+      };
+
+      route.get('currentModel').save().then(onSuccess, onFailure);
      }
    }
 });
