@@ -1,7 +1,5 @@
 @import 'ember-paper';
 
-
-
 .paper-right{
   margin-left: auto;
 }
@@ -209,6 +207,22 @@
   filter: alpha(opacity=20);
   img{
     width: 300px;
+  }
+}
+
+//Notificaitons
+.notification{
+  width: 70%;
+  margin: 0 auto;
+  &.active{
+    .md-toolbar-tools{
+      background-color: green;
+    }
+    &.danger{
+      .md-toolbar-tools{
+        background-color: red;
+      }
+    }
   }
 }
 

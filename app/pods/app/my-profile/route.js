@@ -12,8 +12,19 @@ export default Ember.Route.extend({
 
   actions: {
     update(){
-      let user = this.get("currentModel");
-      user.save();
+      let route = this;
+      let user = route.get("currentModel");
+
+      let onSuccess = function(){
+        route.get('flashMessages').success('Updated user profile');
+      };
+
+      let onFailure = function(){
+        route.get('flashMessages').danger('Error updating user profile');
+      };
+
+      user.save().then(onSuccess, onFailure);
+
     }
   }
 });

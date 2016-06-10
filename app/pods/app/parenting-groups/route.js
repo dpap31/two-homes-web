@@ -2,12 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  session: Ember.inject.service(),
+  sessionUser: Ember.inject.service('session-user'),
 
   model() {
     let router = this;
     return Ember.RSVP.hash({
-      user: this.get('session.sessionUser'),
+      user: this.get('sessionUser.user'),
       newParentingGroup: router.store.createRecord('parenting-group'),
     });
   },
@@ -20,10 +20,10 @@ export default Ember.Route.extend({
       let model = router.modelFor(router.routeName);
       let onSuccess = function(){
         router.get('sessionUser.user.parentingGroups').reload();
+        router.get('flashMessages').success('Created new group');
       };
-
       let onFailure = function(){
-        console.log('ERROR');
+        router.get('flashMessages').danger('Failed to create group');
       };
       model.newParentingGroup.save().then(onSuccess, onFailure);
     },

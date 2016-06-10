@@ -10,8 +10,8 @@ module.exports = function(environment) {
     locationType: 'auto',
 
     flashMessageDefaults: {
-     timeout: 500000,
-     //extendedTimeout: 375
+     timeout: 5000,
+     extendedTimeout: 375
     },
 
     EmberENV: {

@@ -15,7 +15,7 @@ export default Ember.Route.extend({
         // Successful Login
         this.get('flashMessages').success('Logged in!');
 
-      }).catch((response) => {
+      }).catch(() => {
 
         // Failed Login
         this.get('flashMessages').danger('There was a problem with your username or password, please try again');
