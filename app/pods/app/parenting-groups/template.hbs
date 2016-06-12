@@ -7,28 +7,39 @@
   </div>
 </div>
 <br>
-{{paper-divider}}
-<br>
-{{#each model.user.parentingGroups as |group|}}
-  <div class="home-card">
-  {{#paper-card}}
-  {{#paper-toolbar class='pg-header'}}
-    {{#paper-button action='goToPg' param=group}}<h2>Group {{group.id}}</h2>{{/paper-button}}
-  {{/paper-toolbar}}
-    {{#paper-card-title class="card-body"}}
-      {{#paper-card-title-text}}
-        <ul>
-          {{#each group.users as |user| }}
-            <li id="member">{{user.firstName}} {{user.lastName}}</li>
-          {{/each}}
-        </ul>
-      {{/paper-card-title-text}}
-    {{/paper-card-title}}
-    <div class="md-actions" layout="row" layout-align="end center">
-        {{#paper-button action='goToPgInvite' param=group}}Invite{{/paper-button}}
-        {{#paper-button action='goToPg' param=group}}View{{/paper-button}}
-    </div>
-  {{/paper-card}}
-  </div>
-{{/each}}
-{{outlet}}
+{{#parenting-group-filter
+   filter=(action 'filterByUser') as |memberships|}}
+  <ul class="results">
+    {{#each memberships as |membership|}}
+      <div class="home-card">
+       {{#paper-card}}
+       {{#paper-toolbar class='pg-header'}}
+         {{#paper-button action='goToPg' param=membership.parentingGroup}}<h2>Group {{membership.parentingGroup.id}}</h2>{{/paper-button}}
+       {{/paper-toolbar}}
+         {{#paper-card-title class="card-body"}}
+           {{#paper-card-title-text}}
+             <ul class="group-members">
+               {{#each membership.parentingGroup.users as |user| }}
+                 <li id="member">{{user.firstName}} {{user.lastName}}</li>
+               {{/each}}
+             </ul>
+           {{/paper-card-title-text}}
+         {{/paper-card-title}}
+         <div class="md-actions" layout="row" layout-align="end center">
+             {{#paper-button action='goToPgInvite' param=membership.parentingGroup}}Invite{{/paper-button}}
+             {{#paper-button action='goToPg' param=membership.parentingGroup}}View{{/paper-button}}
+         </div>
+       {{/paper-card}}
+       </div>
+    {{else}}
+      <div class='no-results'>
+        {{paper-icon "find in page" size=5}}
+        <h3>No Results</h3>
+        <p>We couldn’t find any parenting groups matching your search</p>
+      </div>
+    {{/each}}
+  </ul>
+{{/parenting-group-filter}}
+
+
+
