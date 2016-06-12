@@ -8,7 +8,7 @@
 </div>
 <br>
 {{#parenting-group-filter
-   filter=(action 'filterById') as |memberships|}}
+   filter=(action 'filterByUser') as |memberships|}}
   <ul class="results">
     {{#each memberships as |membership|}}
       <div class="home-card">
@@ -35,7 +35,7 @@
       <div class='no-results'>
         {{paper-icon "find in page" size=5}}
         <h3>No Results</h3>
-        <p>We couldn’t find any parenting groups matching query</p>
+        <p>We couldn’t find any parenting groups matching your search</p>
       </div>
     {{/each}}
   </ul>
