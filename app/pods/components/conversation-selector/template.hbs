@@ -2,7 +2,7 @@
   {{#paper-list}}
     {{#each conversations as |convo|}}
       {{#paper-item class="md-3-line" action=(action "goToConvo" convo)}}
-      {{user-avatar user=convo.users.lastObject size="sm"}}
+      {{!-- {{user-avatar user_id=convo.users.lastObject.id initials=convo.users.lastObject.initials size="sm"}} --}}
       <div class="md-list-item-text">
         <h3>
           {{#each convo.users as |user|}}
