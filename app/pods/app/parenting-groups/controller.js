@@ -6,7 +6,17 @@ export default Ember.Controller.extend({
   actions: {
     filterById(param) {
       if (param !== '') {
-        return this.get('store').query('membership', { filter: { user_id: this.get('sessionUser.user.id'), parenting_group_id: param } });
+        const regexString = '(' + param.split(' ').join(')+.*(') + ')+.*';
+        const regex = new RegExp(regexString, 'ig');
+        let allUsers = this.get('store').peekAll('user')
+        let filteredUsers = allUsers.filter((item) => item.get('fullName').match(regex));
+        let filteredUsersMemberships = filteredUsers.getEach('memberships');
+        return Ember.RSVP.all(filteredUsersMemberships).then(function(membershipCollections){
+          var memberships = membershipCollections.reduce(function(sum, val){
+              return sum.pushObjects(val.toArray());
+          }, []);
+          return memberships;
+        });
       } else {
         return this.get('sessionUser.user.memberships')
       }
