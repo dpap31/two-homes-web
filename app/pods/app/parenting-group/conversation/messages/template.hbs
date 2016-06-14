@@ -10,10 +10,7 @@
             {{chat.chat-bubbles.other message=message currentUser=sessionUser.user }}
           {{/if}}
           {{else}}
-            <div class='no-messages'>
-              <img src="http://image005.flaticon.com/1/png/512/3/3879.png">
-              <h4>It has been slow, no messages yet.</h4>
-            </div>
+            {{chat.no-messages}}
         {{/each}}
       {{/paper-list}}
     {{/paper-card-content}}
