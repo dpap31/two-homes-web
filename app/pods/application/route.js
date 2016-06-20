@@ -15,6 +15,11 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
     logout() {
       this.get('session').invalidate();
+    },
+
+    sessionInvalidated() {
+      console.log("logging out");
+      this.transitionTo('auth.login'); // or whatever route you want
     }
   }
 });
