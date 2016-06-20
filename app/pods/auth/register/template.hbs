@@ -1,8 +1,9 @@
 {{#paper-content class="md-padding"}}
-  {{#paper-card}}
+  {{#paper-card class="primary-auth-card"}}
     {{#paper-card-title}}
       {{#paper-card-title-text}}
-        <h3 class="login-register-header">{{link-to 'Login' 'auth.login'}} or Sign Up</h3>
+        <img id="logo" src="assets/images/logo.png">
+        <h3 class="login-register-header">Register for TwoHomes</h3>
       {{/paper-card-title-text}}
     {{/paper-card-title}}
   {{#paper-card-content}}
@@ -18,7 +19,12 @@
           Moderator
         {{/paper-option}}
     {{/paper-select}}
-    {{#paper-button raised=true action="doRegister"}}Register{{/paper-button}}
+    {{#paper-button raised=true primary=true action="doRegister"}}Register{{/paper-button}}
+    {{/paper-card-content}}
+  {{/paper-card}}
+  {{#paper-card class="secondary-auth-card"}}
+    {{#paper-card-content}}
+      Already have an account? {{link-to 'Login here' 'auth.login'}}.
     {{/paper-card-content}}
   {{/paper-card}}
 {{/paper-content}}

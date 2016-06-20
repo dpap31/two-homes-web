@@ -26,7 +26,6 @@
         {{#paper-sidenav-toggle as |toggle|}}
           {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
         {{/paper-sidenav-toggle}}
-        <span class="md-breadcrumb-page">Title</span>
         <div class='paper-right'>
           {{#if session.isAuthenticated}}
             {{#paper-button action='logout' }}Logout{{/paper-button}}
@@ -37,7 +36,6 @@
         </div>
       </div>
     {{/paper-toolbar}}
-
     {{#paper-content class="md-padding"}}
       {{notifications.notification-center}}
       {{outlet}}
