@@ -21,4 +21,18 @@ export default function() {
     this.use('toUp'),
     this.reverse('toDown')
   );
+
+  // ParentingGroups <--> My Profile
+  this.transition(
+    this.fromRoute('app.parenting-groups'),
+    this.toRoute('app.my-profile'),
+    this.use('toUp'),
+    this.reverse('toDown')
+  );
+  // Parenting Groups <--> Conversation
+  this.transition(
+    this.fromRoute('app.parenting-groups'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
 }

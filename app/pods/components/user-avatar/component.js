@@ -14,7 +14,7 @@ export default Ember.Component.extend({
     var colorOne = colors[ fullNameLength % arrLength];
     var colorTwo = colors[ (firstNameLength * 3) % arrLength];
     // Output style text in html safe string
-    var str = "background: linear-gradient(" + colorOne + ", " + colorTwo + ")"
+    var str = "background: linear-gradient(" + colorOne + ", " + colorTwo + ")";
     return Ember.String.htmlSafe(str);
   }),
 });
