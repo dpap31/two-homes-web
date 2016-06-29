@@ -1,4 +1,17 @@
-<h1>Parenting Group {{model.id}}</h1>
+{{#if model.isEditing}}
+  <form {{action 'savePg' model on='submit'}} class="form-inline">
+  <div class="input-group">
+    {{paper-input label="Group Name" class="pg-header-text-edit" value=model.name required=true}}
+    {{#paper-button disabled=model.isNotValid primary=true raised=true}}Save{{/paper-button}}
+  </div>
+</form>
+{{else}}
+  {{#if model.name}}
+    <h1 class="pg-header-text" {{action 'editPgName' model}}>{{model.name}}</h1>
+  {{else}}
+    <h1 class="pg-header-text" {{action 'editPgName' model}}>Parenting Group {{model.id}}</h1>
+  {{/if}}
+{{/if}}
 {{sessionUser.conversations}}
 {{conversation-selector conversations=model.conversations}}
 

@@ -214,14 +214,23 @@
   }
 
 // Parenting Group Cards
+.pg-header-text{
+  width: 25%;
+  &:hover{
+    background-color: lemonchiffon;
+  }
+}
+
+.pg-header-text-edit{
+  width: 35%;
+}
 .card-body{
-  background-color: aliceblue;
   min-height: 100px;
 }
 .pg-header{
   text-align: center;
   button{
-    background-color: #b3b3b3;
+    background-color: darkcyan;
     margin:0px !important;
   }
 }

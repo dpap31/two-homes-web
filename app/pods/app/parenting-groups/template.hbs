@@ -14,7 +14,13 @@
       <div class="home-card">
        {{#paper-card}}
        {{#paper-toolbar class='pg-header'}}
-         {{#paper-button action='goToPg' param=membership.parentingGroup}}<h2>Group {{membership.parentingGroup.id}}</h2>{{/paper-button}}
+         {{#paper-button action='goToPg' param=membership.parentingGroup}}
+          {{#if membership.parentingGroup.name}}
+            <h2>{{membership.parentingGroup.name}}</h2>
+          {{else}}
+            <h2>Group {{membership.parentingGroup.id}}</h2>
+          {{/if}}
+      {{/paper-button}}
        {{/paper-toolbar}}
          {{#paper-card-title class="card-body"}}
            {{#paper-card-title-text}}
