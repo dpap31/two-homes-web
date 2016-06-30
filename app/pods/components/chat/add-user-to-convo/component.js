@@ -27,5 +27,9 @@ export default Ember.Component.extend({
 
       userConversation.save().then(onSuccess);
     },
+
+    goToPgInvite(pg){
+      this.get('router').transitionTo('app.parenting-group.new-invite', pg);
+    },
   }
 });

@@ -1,8 +1,24 @@
+{{#paper-content}}
 <h2>Invite New User to Parenting Group {{group.id}}</h2>
-{{#if responseMessage}}
-  <div class="alert alert-success">{{responseMessage}}</div>
-{{/if}}
-{{paper-input label="Email" type="email" value=emailAddress icon="email" icon-class="email" required=true}}
-{{#paper-button disabled=isDisabled primary=true raised=true action='sendInvite'}}Send invitation{{/paper-button}}
+  {{#if responseMessage}}
+    <div class="alert alert-success">{{responseMessage}}</div>
+  {{/if}}
+  {{paper-input label="Email" type="email" value=emailAddress icon="email" icon-class="email" required=true}}
+  {{#paper-button disabled=isDisabled primary=true raised=true action='sendInvite'}}Send invitation{{/paper-button}}
+<h2>Members</h2>
+<div class='parenting-group-members'>
+  {{#paper-list}}
+      {{#each model.parentingGroup.users as |user| }}
+        {{#paper-item class="md-3-line"}}
+          {{user-avatar user=user size="md"}}
+          <div class="md-list-item-text">
+            <h3>{{user.firstName}} {{user.lastName}}</h3>
+            <h4>{{user.email}}</h4>
+          </div>
+        {{/paper-item}}
+      {{/each}}
+    {{/paper-list}}
+</div>
+{{/paper-content}}
 {{outlet}}
 
