@@ -12,8 +12,7 @@
     <h1 class="pg-header-text" {{action 'editPgName' model}}>Parenting Group {{model.id}}</h1>
   {{/if}}
 {{/if}}
-{{sessionUser.conversations}}
-{{conversation-selector conversations=model.conversations}}
+{{conversation-selector conversations=sessionUser.user.conversations}}
 
 {{outlet}}
 
