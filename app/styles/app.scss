@@ -1,6 +1,18 @@
-// $base-background-color: yellow;
-
+$primary: 'blue-grey';
 @import 'ember-paper';
+$background-color: #EFF7FF; //Aliceblue
+$secondary-color: #BEC5CB; //Light Gray
+$primary-color: #607d8b; //Dark Gray/Blue
+$accent-color: #A2D0FE; //Pale Cornflower Blue
+
+
+
+.sidenav{
+  background-color: $background-color;
+  .sidenav-content{
+    background-color: $background-color;
+  }
+}
 
 .paper-right{
   margin-left: auto;
@@ -13,9 +25,14 @@
 }
 /*auth*/
 .primary-auth-card{
+  .my-profile-title{
+    background-color: $primary-color;
+    margin-bottom: 20px;
+    color: white;
+  }
   width: 50%;
   margin: 0 auto;
-  background-color: #f7f7f7;
+  background-color: $background-color;
 }
 
 #logo{
@@ -26,7 +43,7 @@
 .secondary-auth-card{
   width: 50%;
   margin: 0 auto;
-  background-color: aliceblue;
+  background-color: $secondary-color;
   text-align: center;
 }
 
@@ -93,7 +110,7 @@
   margin-top: 0px;
   margin-bottom: 0px;
   overflow: scroll;
-  background-color: aliceblue;
+  background-color: $secondary-color;
 }
 
 /*Chat & Messages Body*/
@@ -162,21 +179,28 @@
 .convo-menu{
   width: 20%;
   float:left;
-  background-color: aliceblue;
+  background-color: #777B7E;
+  border: 2px $accent-color solid;
+  .md-list-item-text h3, p{
+    color: white !important;
+  }
+  .paper-divider{
+    background-color: $accent-color !important;
+  }
 }
 .new-message{
   clear: both;
   width: 70%;
   float: right;
   margin-top: 0px;
-  background-color: ivory;
+  background-color: $background-color;
 }
 
 // Chat Header
 .recipients{
   width: 70%;
   float: right;
-  background-color: ivory;
+  background-color: $background-color;
   margin-bottom: 0px;
   min-height: 70px;
   #member{
@@ -189,11 +213,11 @@
     margin-right: 5px;
     float: left;
     border-radius: 12px;
-    border: 1px solid #3f51b5;
-    color: #3f51b5;
+    border: 1px solid $primary-color;
+    color: $primary-color;
     &:hover {
       color: white;
-      background-color: #3f51b5;
+      background-color: $primary-color;
     }
   }
 }
@@ -223,6 +247,7 @@
   width: 25%;
   &:hover{
     background-color: lemonchiffon;
+
   }
 }
 
@@ -231,16 +256,21 @@
 }
 .card-body{
   min-height: 100px;
+  background-color: $background-color;
 }
+
 .pg-header{
   text-align: center;
   button{
-    background-color: darkcyan;
+    background-color: #51687E;
     margin:0px !important;
+    h2{
+      color: #EFF7FF;
+    }
   }
 }
 .md-actions{
-  background-color: #CFE3E8;
+  background-color: $secondary-color;
 }
 
 .thread .no-messages{
