@@ -6,7 +6,7 @@ $primary-color: #607d8b; //Dark Gray/Blue
 $accent-color: #A2D0FE; //Pale Cornflower Blue
 
 
-
+/*Core Components*/
 .sidenav{
   background-color: $background-color;
   .sidenav-content{
@@ -14,8 +14,26 @@ $accent-color: #A2D0FE; //Pale Cornflower Blue
   }
 }
 
+.paper-divider{
+  background-color: $accent-color !important;
+}
+
 .paper-right{
   margin-left: auto;
+}
+
+.card-header{
+  background-color: $primary-color;
+  color: white;
+}
+
+.card-body{
+  min-height: 100px;
+  background-color: $background-color;
+}
+
+.secondary-card-body{
+  background-color: $secondary-color;
 }
 
 .parenting-group-members{
@@ -23,13 +41,9 @@ $accent-color: #A2D0FE; //Pale Cornflower Blue
     margin-top: 10px;
   }
 }
+
 /*auth*/
 .primary-auth-card{
-  .my-profile-title{
-    background-color: $primary-color;
-    margin-bottom: 20px;
-    color: white;
-  }
   width: 50%;
   margin: 0 auto;
   background-color: $background-color;
@@ -86,6 +100,12 @@ $accent-color: #A2D0FE; //Pale Cornflower Blue
       margin-top: -40px;
     }
   }
+}
+
+/* Add Users */
+.add-users{
+  width: 60%;
+  margin: 0 auto;
 }
 
 /* Conversation */
@@ -184,8 +204,11 @@ $accent-color: #A2D0FE; //Pale Cornflower Blue
   .md-list-item-text h3, p{
     color: white !important;
   }
-  .paper-divider{
-    background-color: $accent-color !important;
+  .new-convo-li{
+    margin: 10px;
+    .new-convo-btn{
+      background-color: $background-color !important;
+    }
   }
 }
 .new-message{
@@ -245,18 +268,14 @@ $accent-color: #A2D0FE; //Pale Cornflower Blue
 // Parenting Group Cards
 .pg-header-text{
   width: 25%;
+  padding: 5px;
   &:hover{
-    background-color: lemonchiffon;
-
+    background-color: $background-color;
   }
 }
 
 .pg-header-text-edit{
   width: 35%;
-}
-.card-body{
-  min-height: 100px;
-  background-color: $background-color;
 }
 
 .pg-header{
@@ -269,6 +288,7 @@ $accent-color: #A2D0FE; //Pale Cornflower Blue
     }
   }
 }
+
 .md-actions{
   background-color: $secondary-color;
 }
@@ -276,8 +296,8 @@ $accent-color: #A2D0FE; //Pale Cornflower Blue
 .thread .no-messages{
   min-height: 300px;
   text-align: center;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
+  opacity: 0.5;
+  filter: alpha(opacity=50);
   img{
     width: 300px;
   }
@@ -312,43 +332,38 @@ $accent-color: #A2D0FE; //Pale Cornflower Blue
 
 // User Avatar
 .avatar-circle-sm {
-    width: 40px;
-    height: 40px;
-    background-color: darkcyan;
-    text-align: center;
-    border-radius: 50%;
-    margin-right: 15px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    .initials {
-      position: relative;
-      top: 4px;
-      font-size: 18px;
-      line-height: 20px;
-      color: #fff;
-    }
+  width: 40px;
+  height: 40px;
+  background-color: darkcyan;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 15px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  .initials {
+    position: relative;
+    top: 4px;
+    font-size: 18px;
+    line-height: 20px;
+    color: #fff;
+  }
 }
 
 .avatar-circle-md {
-    width: 45px;
-    height: 45px;
-    background-color: darkcyan;
-    text-align: center;
-    border-radius: 50%;
-    margin-right: 15px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    .initials {
-      position: relative;
-      top: 13px;
-      font-size: 20px;
-      line-height: 20px;
-      color: #fff;
-    }
+  width: 45px;
+  height: 45px;
+  background-color: darkcyan;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 15px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  .initials {
+    position: relative;
+    top: 13px;
+    font-size: 20px;
+    line-height: 20px;
+    color: #fff;
+  }
 }
-
-//.avatar-circle-md   { @include avatar(60px); }
-//.avatar-circle-sm   { @include avatar(30px); }
-//.avatar-circle-lg   { @include avatar(250px); }
-
 

@@ -18,9 +18,11 @@
       {{paper-divider}}
     {{/each}}
     {{#paper-item class="md-3-line"}}
-      {{#link-to 'app.parenting-group.conversations.new'}}
-        <h3>{{paper-icon 'library-add'}}New Conversation</h3>
-      {{/link-to}}
+      <div layout='flex' class="md-list-item-text new-convo-li">
+          {{#paper-button raised='true' class="new-convo-btn" icon-button=true action=(action "goToNewConvo")}}
+            {{paper-icon "add-box"}}
+          {{/paper-button}}
+      </div>
     {{/paper-item}}
   {{/paper-list}}
 {{/paper-card}}

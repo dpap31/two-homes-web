@@ -8,6 +8,9 @@ export default Ember.Component.extend({
   actions: {
     goToConvo: function(convo) {
       this.get('router').transitionTo('app.parenting-group.conversation.messages', convo);
+    },
+    goToNewConvo: function(){
+      this.get('router').transitionTo('app.parenting-group.conversations.new');
     }
   }
 });

@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     // Use fullName and firstName length to generate same bg colors
     var fullNameLength = user.get('fullName.length');
     var firstNameLength = user.get('firstName.length');
-    const colors = ['#000000', '#f06d06', '#335CD6', '#6B4724', '#0000DB', '#6E6E6E', '#001947'];
+    const colors = ['#FB615F', '060B0F', '#607d8b', '#A2D0FE', '#62292F', '#1D6D99', '#62292F'];
     const arrLength = colors.length;
     var colorOne = colors[ fullNameLength % arrLength];
     var colorTwo = colors[ (firstNameLength * 3) % arrLength];
