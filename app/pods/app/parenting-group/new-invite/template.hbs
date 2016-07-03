@@ -1,4 +1,5 @@
 {{#paper-content class='add-users'}}
+
   {{#paper-card class='parenting-group-members'}}
     {{#paper-card-title class="card-header"}}
       {{#paper-card-title-text}}
@@ -34,7 +35,6 @@
       {{paper-input label="Email" type="email" value=emailAddress icon="email" icon-class="email" required=true}}
       {{#paper-button disabled=isDisabled primary=true raised=true action='sendInvite'}}Send invitation{{/paper-button}}
     {{/paper-card-content}}
-    {{paper-divider}}
   {{/paper-card}}
 {{/paper-content}}
 {{outlet}}

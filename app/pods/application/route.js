@@ -6,6 +6,14 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     this.transitionTo('auth.login');
   },
 
+  beforeModel() {
+    if(this.get('session').get('isAuthenticated')) {
+      this.transitionTo('app');
+    } else {
+      this.transitionTo('auth.login');
+    }
+  },
+
   actions: {
     login(identification, password){
       this.get('session').authenticate('authenticator:oauth2', identification, password).catch((reason) => {

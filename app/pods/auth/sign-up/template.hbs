@@ -1,13 +1,13 @@
 {{#paper-content class="md-padding"}}
   {{#paper-card class="primary-auth-card"}}
-    {{#paper-card-title}}
+    {{#paper-card-title class="card-header"}}
       {{#paper-card-title-text}}
-        <img id="logo" src="assets/images/logo.png">
+        <img id="logo" src="assets/images/logo-white.png">
         <h3 class='login-register-header'>
         Sign Up for TwoHomes</h3>
       {{/paper-card-title-text}}
     {{/paper-card-title}}
-  {{#paper-card-content}}
+  {{#paper-card-content class="md-padding"}}
     {{paper-input label="First Name" value=model.user.firstName icon="person" icon-class="name"}}
     {{paper-input label="Last Name" value=model.user.lastName icon="person" icon-class="name"}}
     {{paper-input label="Email" type="email" value=model.user.email icon="email" icon-class="email" required=true}}
