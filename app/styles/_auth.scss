@@ -1,0 +1,21 @@
+/*auth*/
+.auth-card {
+  width: 50%;
+  margin: 0 auto;
+
+  &.primary {
+    background-color: $background-color;
+  }
+  &.secondary{
+    background-color: $secondary-color;
+    text-align: center;
+  }
+
+  .login-register-header{
+    text-align: center;
+  }
+
+  #md-button{
+    text-align: right;
+  }
+}

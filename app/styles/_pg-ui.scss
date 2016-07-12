@@ -1,0 +1,57 @@
+.home-card{
+  max-height: 400px;
+  width: 300px;
+  max-width: 350px;
+  float: left;
+  margin-left: 40px;
+  .group-members{
+    padding-left: 0px;
+    float: right;
+  }
+}
+.new-pg{
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.md-actions{
+  background-color: $secondary-color;
+}
+
+// Parenting Group Cards
+.pg-header-text{
+  width: 25%;
+  padding: 5px;
+  &:hover{
+    background-color: $background-color;
+  }
+}
+
+.pg-header-text-edit{
+  width: 35%;
+}
+
+.pg-header{
+  text-align: center;
+  button{
+    background-color: $gray-blue-color;
+    margin:0px !important;
+    h2{
+      color: #EFF7FF;
+    }
+  }
+}
+
+// Search Fallback
+.no-results{
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  padding: 30px;
+  text-align: center;
+  background-color: $background-color;
+  border: 1px solid $gray-blue-color;
+  .paper-icon{
+    color: $gray-blue-color;
+  }
+}
