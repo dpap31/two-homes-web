@@ -1,4 +1,20 @@
 /*Chat & Messages Body*/
+.conversation-container {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  .conversation-selector-column{
+    flex: 1 0 22%;
+  }
+  .thread-column{
+    flex: 1 0 80%;
+  }
+}
+
+.full-thread{
+  width: 80%;
+  margin: 0 auto;
+}
 .conversation li {
   display: flex;
   margin-bottom: 10px;
@@ -66,10 +82,9 @@
 }
 
 .convo-menu{
-  width: 20%;
-  float:left;
   background-color: #777B7E;
   border: 2px $accent-color solid;
+  color: white !important;
   .md-list-item-text h3, p{
     color: white !important;
   }
@@ -79,19 +94,17 @@
       background-color: $background-color !important;
     }
   }
+  .paper-divider:last-of-type {
+      display: none;
+  }
 }
 .new-message{
-  clear: both;
-  width: 70%;
-  float: right;
   margin-top: 0px;
   background-color: $background-color;
 }
 
 // Chat Header
 .recipients{
-  width: 70%;
-  float: right;
   background-color: $background-color;
   margin-bottom: 0px;
   min-height: 70px;
@@ -164,11 +177,8 @@
   background: #eeeeee;
 }
 .thread{
-  float: right;
   padding: 20px;
   height: 450px;
-  width: 70%;
-  display: inline-block;
   margin-top: 0px;
   margin-bottom: 0px;
   overflow: scroll;

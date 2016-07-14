@@ -4,11 +4,5 @@
 @import "avatar";
 @import "chat-ui";
 @import "pg-ui";
+@import "pg-new-invite";
 
-.pg-user-list{
-  display: flex;
-  flex-wrap: wrap;
-}
-.pg-user{
-  flex: 1 0 50%;
-}

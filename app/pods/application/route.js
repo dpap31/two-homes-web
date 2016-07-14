@@ -8,7 +8,6 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
   beforeModel() {
     if(this.get('session').get('isAuthenticated')) {
-      this.transitionTo('app');
     } else {
       this.transitionTo('auth.login');
     }

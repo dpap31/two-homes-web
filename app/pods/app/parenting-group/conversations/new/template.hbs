@@ -1,19 +1,20 @@
-{{#paper-card class="recipients"}}
-<div layout='flex' class='md-padding'>
-  <div flex=1>{{chat.message-recipients conversation=model}}</div>
-  <div>{{chat.add-user-to-convo conversation=model}}</div>
-</div>
-{{/paper-card}}
-<div class="chatscreen">
-  <div class="chatscreen-messages">
-  {{#paper-card class="thread"}}
-    {{#paper-card-content}}
-      {{chat.no-messages}}
-    {{/paper-card-content}}
+<div class='full-thread'>
+  {{#paper-card class="recipients"}}
+  <div layout='flex' class='md-padding'>
+    <div flex=1>{{chat.message-recipients conversation=model}}</div>
+    <div>{{chat.add-user-to-convo conversation=model}}</div>
+  </div>
   {{/paper-card}}
-  {{#paper-card class="new-message"}}
-    {{chat.new-message conversation_id=model.convo_id}}
-  {{/paper-card}}
+  <div class="chatscreen">
+    <div class="chatscreen-messages">
+    {{#paper-card class="thread"}}
+      {{#paper-card-content}}
+        {{chat.no-messages}}
+      {{/paper-card-content}}
+    {{/paper-card}}
+    {{#paper-card class="new-message"}}
+      {{chat.new-message conversation_id=model.convo_id}}
+    {{/paper-card}}
+    </div>
   </div>
 </div>
-

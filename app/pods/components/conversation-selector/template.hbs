@@ -1,5 +1,14 @@
   {{#paper-card class="convo-menu"}}
   {{#paper-list}}
+    {{#paper-item class="md-3-line" action=(action "goToNewConvo")}}
+      <h4>New Conversation</h4>
+      <div layout='flex' class="md-list-item-text new-convo-li">
+          {{#paper-button raised='true' class="new-convo-btn" icon-button=true action=(action "goToNewConvo")}}
+            {{paper-icon "add-box"}}
+          {{/paper-button}}
+      </div>
+    {{/paper-item}}
+    {{paper-divider}}
     {{#each conversations as |convo|}}
       {{#paper-item class="md-3-line" action=(action "goToConvo" convo)}}
       <div class="md-list-item-text">
@@ -17,13 +26,6 @@
       {{/paper-item}}
       {{paper-divider}}
     {{/each}}
-    {{#paper-item class="md-3-line"}}
-      <div layout='flex' class="md-list-item-text new-convo-li">
-          {{#paper-button raised='true' class="new-convo-btn" icon-button=true action=(action "goToNewConvo")}}
-            {{paper-icon "add-box"}}
-          {{/paper-button}}
-      </div>
-    {{/paper-item}}
   {{/paper-list}}
 {{/paper-card}}
 {{yield}}
