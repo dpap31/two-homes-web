@@ -1,4 +1,6 @@
-  {{#paper-card class="convo-menu"}}
+{{!-- {{pgUserConversations}} --}}
+{{pg}}
+{{#paper-card class="convo-menu"}}
   {{#paper-list}}
     {{#paper-item class="md-3-line" action=(action "goToNewConvo")}}
       <h4>New Conversation</h4>
@@ -9,7 +11,7 @@
       </div>
     {{/paper-item}}
     {{paper-divider}}
-    {{#each conversations as |convo|}}
+    {{#each pgUserConversations as |convo|}}
       {{#paper-item class="md-3-line" action=(action "goToConvo" convo)}}
       <div class="md-list-item-text">
         <h3>
