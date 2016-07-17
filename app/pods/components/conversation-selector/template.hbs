@@ -1,5 +1,7 @@
-{{!-- {{pgUserConversations}} --}}
-{{pg}}
+{{pgUserConversations2}}
+{{parentingGroupId}}
+{{currentParentingGroupId}}
+{{conversations}}
 {{#paper-card class="convo-menu"}}
   {{#paper-list}}
     {{#paper-item class="md-3-line" action=(action "goToNewConvo")}}
@@ -11,22 +13,24 @@
       </div>
     {{/paper-item}}
     {{paper-divider}}
-    {{#each pgUserConversations as |convo|}}
-      {{#paper-item class="md-3-line" action=(action "goToConvo" convo)}}
-      <div class="md-list-item-text">
-        <h3>
-          {{#each convo.users as |user|}}
-             {{#unless (eq user.id sessionUser.user.id)}}
-                {{user.firstName}}
-             {{/unless}}
-           {{/each}}
-         </h3>
+    {{#each conversations as |convo|}}
+      {{#if (eq convo.parentingGroup.id pg.id)}}
+        {{#paper-item class="md-3-line" action=(action "goToConvo" convo)}}
+        <div class="md-list-item-text">
+          <h3>
+            {{#each convo.users as |user|}}
+            {{#unless (eq user.id sessionUser.user.id)}}
+            {{user.firstName}}
+            {{/unless}}
+            {{/each}}
+          </h3>
           <p>
             {{truncate-text convo.messages.firstObject.body limit=15}}
           </p>
         </div>
-      {{/paper-item}}
-      {{paper-divider}}
+        {{/paper-item}}
+        {{paper-divider}}
+      {{/if}}
     {{/each}}
   {{/paper-list}}
 {{/paper-card}}

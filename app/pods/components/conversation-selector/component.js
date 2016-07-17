@@ -4,17 +4,22 @@ const { inject } = Ember;
 
 export default Ember.Component.extend({
   sessionUser: inject.service('sessionUser'),
-  currentParentingGroupId: 26,
-  // convo: this.get('conversations').filterBy('parentingGroupId', 26);
-  // pgUserConversations: Ember.computed.filter('conversations', function(conversation){
-  //   //var parentingGroupId = this.get('parentingGroup.id')
-  //   //return this.get('conversations').filterBy('parentingGroupId', parentingGroupId);
-  // }),
-  // parentingGroupId: Ember.computed("pg", function(){
-  //   return this.get("parentingGroup.id")
-  // }),
 
-  pgUserConversations: Ember.computed.filterBy('conversations', 'parentingGroupId', null),
+  // parentingGroupId: Ember.computed(function(){
+  //   return this.get("pg.id")
+  // }),
+  parentingGroupId: null,
+
+  pgUserConversations: Ember.computed.filterBy('conversations', 'parentingGroupId', 1),
+
+  // pgUserConversations2: Ember.computed(parentingGroupId,function(){
+  //   //console.log(this.get('conversations'));
+  //   return this.get('conversations').filterBy('parentingGroupId', this.get("pg.id"))
+  //   }.property('conversations.@each.parentingGroupId')),
+  //   return this.get('conversations').filterBy('parentingGroupId', this.get('parentingGroupId'));
+  // }.property('conversations.@each.parentingGroupId'),
+//  return this.get('data').filterBy('id', this.get('localID'));
+// }.property('data.@each.id')
 
   actions: {
     goToConvo: function(convo) {
