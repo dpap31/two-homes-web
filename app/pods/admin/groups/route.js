@@ -29,16 +29,11 @@ export default Ember.Route.extend({
     },
 
     goToPg: function(pg) {
-      let firstConversation = pg.get('conversations.firstObject.id');
-      if (firstConversation === undefined) {
-        this.transitionTo("app.parenting-group.conversations.new", pg);
-      } else {
-        this.transitionTo("app.parenting-group.conversation.messages", pg, firstConversation);
-      }
+      this.transitionTo("admin.group", pg);
     },
 
-    goToPgInvite: function(pg) {
-      this.transitionTo("app.parenting-group.new-invite", pg);
-    }
+    // goToPgInvite: function(pg) {
+    //   this.transitionTo("app.parenting-group.new-invite", pg);
+    // }
   }
 });
