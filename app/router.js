@@ -16,8 +16,6 @@ Router.map(function() {
         this.route('join');
       });
       this.route('conversation', { path: 'conversation/:conversation_id'}, function() {
-        this.route('edit', {});
-        this.route('add-user', {});
         this.route('messages');
       });
     });

@@ -1,7 +1,6 @@
-{{diff}}
 {{#paper-menu position="target-right target" as |menu|}}
   {{#paper-button raised='true' target=menu primary=true action="toggleMenu" icon-button=true}}
-    {{paper-icon "add-box" class="md-menu-origin"}}
+    {{paper-icon "group-add" class="md-menu-origin"}}
   {{/paper-button}}
 {{else}}
   {{#each pgUsers as |user|}}
@@ -9,4 +8,7 @@
         <p style="width: 120px;">{{user.fullName}}</p>
     {{/paper-menu-item}}
   {{/each}}
+  {{#paper-menu-item action="goToPgInvite" param=conversation.parentingGroup}}
+        <p>Invite User</p>
+    {{/paper-menu-item}}
 {{/paper-menu}}

@@ -1,15 +1,15 @@
 {{#paper-content class="md-padding"}}
-  {{#paper-card class="primary-auth-card"}}
-    {{#paper-card-title}}
+  {{#paper-card class="primary auth-card"}}
+    {{#paper-card-title class="card-header"}}
       {{#paper-card-title-text}}
-        <h3>My Profile</h3>
+        <h3 id="header-text">My Profile</h3>
       {{/paper-card-title-text}} {{user-avatar user=model size="md"}}
     {{/paper-card-title}}
-  {{#paper-card-content}}
-    {{paper-input label="First Name" value=model.firstName icon="person" icon-class="name"}}
-    {{paper-input label="Last Name" value=model.lastName icon="person" icon-class="name"}}
-    {{paper-input label="Email" type="email" value=model.email icon="email" icon-class="email" required=true}}
-    {{#paper-button raised=true primary="true" action="update"}}Update{{/paper-button}}
+    {{#paper-card-content class="md-padding "}}
+      {{paper-input label="First Name" value=model.firstName icon="person" icon-class="name"}}
+      {{paper-input label="Last Name" value=model.lastName icon="person" icon-class="name"}}
+      {{paper-input label="Email" type="email" value=model.email icon="email" icon-class="email" required=true}}
+      {{#paper-button raised=true primary="true" action="update"}}Update{{/paper-button}}
     {{/paper-card-content}}
   {{/paper-card}}
 {{/paper-content}}

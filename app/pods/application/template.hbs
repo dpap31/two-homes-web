@@ -1,12 +1,12 @@
 {{#paper-nav-container}}
-  {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2" locked-open="gt-sm"}}
+  {{#paper-sidenav class="sidenav md-sidenav-left md-whiteframe-z2" locked-open="gt-sm"}}
     {{#paper-toolbar}}
       <div class="md-toolbar-tools">
        <p>TwoHomes</p>
       </div>
     {{/paper-toolbar}}
 
-    {{#paper-content}}
+    {{#paper-content class="sidenav-content"}}
       {{#paper-list}}
         {{#if session.isAuthenticated}}
           {{#paper-item action='goTo' param='app.my-profile' }}My Profile{{/paper-item}}

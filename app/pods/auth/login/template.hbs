@@ -1,12 +1,12 @@
 {{#paper-content class="auth-content md-padding"}}
-  {{#paper-card class="primary-auth-card"}}
-    {{#paper-card-title}}
+  {{#paper-card class="auth-card primary"}}
+    {{#paper-card-title class="card-header"}}
       {{#paper-card-title-text}}
-        <img id="logo" src="assets/images/logo.png">
+        <img id="logo" src="assets/images/logo-white.png">
         <h3 class='login-register-header'>Login to TwoHomes</h3>
       {{/paper-card-title-text}}
     {{/paper-card-title}}
-    {{#paper-card-content}}
+    {{#paper-card-content class="md-padding"}}
       <form {{action 'doLogin' identification password on='submit'}}>
       {{paper-input label="Email" type="email" value=identification icon="email" icon-class="person" required=true}}
       {{paper-input placeholder="Password" type="password" value=password icon="lock"}}
@@ -17,7 +17,7 @@
     {{/paper-card-content}}
   {{/paper-card}}
 
-  {{#paper-card class="secondary-auth-card"}}
+  {{#paper-card class="auth-card secondary"}}
     {{#paper-card-content}}
       New to TwoHomes? {{link-to 'Create an account.' 'auth.register'}}
     {{/paper-card-content}}

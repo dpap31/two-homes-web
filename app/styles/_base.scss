@@ -1,0 +1,76 @@
+/*Core Components*/
+.sidenav{
+  background-color: $background-color;
+  .sidenav-content{
+    background-color: $background-color;
+  }
+}
+
+.paper-divider{
+  background-color: $accent-color !important;
+}
+
+.paper-right{
+  margin-left: auto;
+}
+
+.card-header{
+  background-color: $gray-blue-color;
+  color: white;
+}
+
+.card-body{
+  min-height: 100px;
+  background-color: $background-color;
+}
+
+.secondary-card-body{
+  background-color: $secondary-color;
+}
+
+.parenting-group-members{
+  .avatar-circle-md{
+    margin-top: 10px;
+  }
+}
+
+#logo{
+  width: 70px;
+  margin: 0 auto;
+}
+
+/* Notifications */
+
+.notifiction-center {
+  display: block;
+  position: fixed;
+  z-index: 10000;
+  .notification {
+    top: 35px;
+    opacity: 0.5;
+    transition: margin-top 375ms, top 300ms, opacity 300ms;
+    &.active {
+      top: 0;
+      opacity: 1
+    }
+    &.exiting {
+      opacity: 0;
+      margin-top: -40px;
+    }
+  }
+}
+
+.notification{
+  width: 70%;
+  margin: 0 auto;
+  &.active{
+    .md-toolbar-tools{
+      background-color: green;
+    }
+    &.danger{
+      .md-toolbar-tools{
+        background-color: red;
+      }
+    }
+  }
+}
