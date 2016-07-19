@@ -6,6 +6,5 @@ export default DS.Model.extend({
   userConversations: DS.hasMany('user-conversations'),
   users: DS.hasMany('users', { async: true }),
   messages: DS.hasMany('messages'),
-  parentingGroup: DS.belongsTo('parenting-group'),
-  incomplete: Ember.computed.filterBy('conversations', 'parentingGroupId', 1)
+  parentingGroup: DS.belongsTo('parenting-group')
 });
