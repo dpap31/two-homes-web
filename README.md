@@ -1,7 +1,15 @@
-# Two-homes-web
+# TwoHomes - Web Client
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## Overview
+TwoHomes is a set of communication tools to make co-parenting just a little bit easier. TwoHomes reduces divorce conflict by providing a centralized communication platform that can be easily audited by legal professionals.
+
+## Tech Stack
+
+Rails API | Backend - (Web Application Framework)
+EmberJS | Frontend  - (JavaScript Web Framework)
+Firebase | Performant Message Storage - (Realtime Database)
+Postgres | Non Message Storage - (Database)
+
 
 ## Prerequisites
 
@@ -15,7 +23,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/dpap31/two-homes-web` this repository
 * change into the new directory
 * `npm install`
 * `bower install`
@@ -28,11 +36,6 @@ You will need the following things properly installed on your computer.
 ### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
 
 ### Building
 
