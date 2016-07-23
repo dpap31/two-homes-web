@@ -1,13 +1,23 @@
 .admin{
- .group-members{
-  margin: 0 auto;
-  width: 75%;
-  .paper-divider{
-    margin-bottom: 10px;
-    &:last-child{
-      display: none;
-      margin: 0px;
+  .group-members{
+    margin: 0 auto;
+    width: 75%;
+    .md-input{
+      width: 70%;
+    }
+    .paper-divider{
+      margin-bottom: 10px;
+      &:last-child{
+        display: none;
+        margin: 0px;
+      }
     }
   }
- }
+  .save{
+    margin-right: 10% !important;
+    span{
+      background-color: $primary !important;
+    }
+  }
 }
+

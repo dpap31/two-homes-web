@@ -3,20 +3,30 @@
     {{#paper-card-title-text}}
       <h2>Group Members</h2>
     {{/paper-card-title-text}}
-    {{#paper-button raised='true'icon-button=true}}
+    {{#paper-button raised='true'icon-button=true action="addUserToggle"}}
       {{paper-icon "group-add" class="md-menu-origin"}}
     {{/paper-button}}
   {{/paper-card-title}}
 {{#paper-card-content class="secondary-card-body"}}
   {{#paper-list}}
-    {{#each model.users as |user| }}
+    {{#if isAddingUser}}
+      {{#paper-item class="md-3-line pg-new-invite"}}
+        <div class="md-list-item-text">
+          {{paper-input label="Email" type="email" value=emailAddress icon="email" icon-class="email" required=true}}
+          {{#paper-button icon-button=true action="addUserToggle"}}{{paper-icon 'clear'}}{{/paper-button}}
+        </div>
+        {{#paper-button disabled=isDisabled icon-button=true class='save' action="sendInvite"}}Invite{{/paper-button}}
+      {{/paper-item}}
+      {{paper-divider}}
+    {{/if}}
+    {{#each model.parentingGroup.users as |user| }}
       {{#paper-item class="md-3-line pg-user"}}
         {{user-avatar user=user size="md"}}
         <div class="md-list-item-text">
           <h3>{{user.firstName}} {{user.lastName}}</h3>
           <h4>{{user.email}}</h4>
           {{#paper-button
-          icon-button=true action=(action "removeUserFromGroup" user model) }}
+          icon-button=true action=(action "removeUserFromGroup" user model.parentingGroup) }}
           {{paper-icon 'clear'}}{{/paper-button}}
         </div>
         {{/paper-item}}
