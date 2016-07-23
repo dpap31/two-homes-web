@@ -1,18 +1,13 @@
-.user-cards{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.user-card{
-    flex: 1 0 25%;
-    margin: 3%;
-    .user-card-header{
-      background-color: $gray-blue-color;
-      .user-avatar{
-        margin: 0 auto;
-      }
+.admin{
+ .group-members{
+  margin: 0 auto;
+  width: 75%;
+  .paper-divider{
+    margin-bottom: 10px;
+    &:last-child{
+      display: none;
+      margin: 0px;
     }
-  .user-card-body{
-    text-align: center;
   }
+ }
 }

@@ -1,37 +1,21 @@
-{{#if model.isEditing}}
-  <form {{action 'savePg' model on='submit'}} class="form-inline">
-  <div class="input-group">
-    {{paper-input label="Group Name" class="pg-header-text-edit" value=model.name required=true}}
-    {{#paper-button disabled=model.isNotValid primary=true raised=true}}Save{{/paper-button}}
-  </div>
-</form>
-{{else}}
-  {{#if model.name}}
-    <h1 class="pg-header-text" {{action 'editPgName' model}}>{{model.name}}</h1>
-  {{else}}
-    <h1 class="pg-header-text" {{action 'editPgName' model}}>Parenting Group {{model.id}}</h1>
-  {{/if}}
-{{/if}}
+{{#paper-content class="admin"}}
 
-<div class="user-cards">
-  {{#each model.users as |user|}}
-    {{#paper-card class="user-card"}}
-      {{#paper-card-title class="user-card-header"}}
-        {{user-avatar user=user size="md" class="user-avatar"}}
-      {{/paper-card-title}}
-      {{#paper-card-content class="user-card-body"}}
-        <h2>{{user.fullName}}</h2>
-        <p>
-          {{user.email}}
-          <br>
-          ({{user.persona}})
-        </p>
-      {{/paper-card-content}}
-      <div class="md-actions" layout="row" layout-align="end center">
-        {{#paper-button}}
-        View
-        {{/paper-button}}
-      </div>
-    {{/paper-card}}
-  {{/each}}
-</div>
+  {{#if model.isEditing}}
+    <form {{action 'savePg' model on='submit'}} class="form-inline">
+    <div class="input-group">
+      {{paper-input label="Group Name" class="pg-header-text-edit" value=model.name required=true}}
+      {{#paper-button disabled=model.isNotValid primary=true raised=true}}Save{{/paper-button}}
+    </div>
+  </form>
+  {{else}}
+    {{#if model.name}}
+      <h1 class="pg-header-text" {{action 'editPgName' model}}>{{model.name}}</h1>
+    {{else}}
+      <h1 class="pg-header-text" {{action 'editPgName' model}}>Parenting Group {{model.id}}</h1>
+    {{/if}}
+  {{/if}}
+
+  {{outlet}}
+
+{{/paper-content}}
+

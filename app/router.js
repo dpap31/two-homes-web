@@ -22,6 +22,7 @@ Router.map(function() {
   this.route('admin', {}, function(){
     this.route('groups');
     this.route('group', { path: 'group/:parenting_group_id'}, function(){
+      this.route('users');
       this.route('reports');
       this.route('settings');
     });
