@@ -3,12 +3,15 @@
 ## Overview
 TwoHomes is a set of communication tools to make co-parenting just a little bit easier. TwoHomes reduces divorce conflict by providing a centralized communication platform that can be easily audited by legal professionals.
 
-## Tech Stack
+![alt text](https://cloud.githubusercontent.com/assets/4949247/17075360/3a60931c-5046-11e6-9477-feea8fec2adf.png "Chat Interface")
 
+## Tech Stack
 * Rails API | Backend - (Web Application Framework)
 * EmberJS | Frontend  - (JavaScript Web Framework)
 * Firebase | Message Data Store - (Realtime Database)
 * Postgres | Application Data Store - (Database)
+* JSON API Resources | JSON API  - (API Specification)
+* Doorkeeper | OAuth - (Authentication)
 
 
 ## Prerequisites
