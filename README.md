@@ -5,10 +5,10 @@ TwoHomes is a set of communication tools to make co-parenting just a little bit 
 
 ## Tech Stack
 
-Rails API | Backend - (Web Application Framework)
-EmberJS | Frontend  - (JavaScript Web Framework)
-Firebase | Performant Message Storage - (Realtime Database)
-Postgres | Non Message Storage - (Database)
+* Rails API | Backend - (Web Application Framework)
+* EmberJS | Frontend  - (JavaScript Web Framework)
+* Firebase | Performant Message Storage - (Realtime Database)
+* Postgres | Non Message Storage - (Database)
 
 
 ## Prerequisites
