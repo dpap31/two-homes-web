@@ -25,9 +25,10 @@ export default Ember.Controller.extend({
         invite.save().then(onSuccess, onFailure);
       },
 
-      removeUserFromGroup(user, group) {
-        group.get('users').removeObject(user);
-        group.save();
+      removeInviteFromGroup(inviteId, groupId) {
+        let invite = this.store.peekRecord('invite', inviteId);
+        invite.set('parentingGroup', null)
+        invite.save();
       },
 
       addUserToggle(){
@@ -44,4 +45,3 @@ export default Ember.Controller.extend({
       }
     }
   });
-

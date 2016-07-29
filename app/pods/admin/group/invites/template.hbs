@@ -13,7 +13,7 @@
 {{#paper-card class='group-members'}}
   {{#paper-card-title class="card-header"}}
     {{#paper-card-title-text}}
-      <h2>Group Members</h2>
+      <h2>Pending Invites</h2>
     {{/paper-card-title-text}}
     {{#paper-button raised='true'icon-button=true action="addUserToggle"}}
       {{paper-icon "group-add" class="md-menu-origin"}}
@@ -31,18 +31,19 @@
       {{/paper-item}}
       {{paper-divider}}
     {{/if}}
-    {{#each model.parentingGroup.users as |user| }}
-      {{#paper-item class="md-3-line pg-user"}}
-        {{user-avatar user=user size="md"}}
+    {{#each model.parentingGroup.invites as |invite| }}
+      {{#if invite.id}}
+        {{#paper-item class="md-3-line pg-user"}}
         <div class="md-list-item-text">
-          <h3>{{user.firstName}} {{user.lastName}}</h3>
-          <h4>{{user.email}}</h4>
+          <h3>{{invite.email}}</h3>
+          <h4>{{moment-from-now invite.createdAt interval=1000}}</h4>
           {{#paper-button
-          icon-button=true action=(action "removeUserFromGroup" user model.parentingGroup) }}
+          icon-button=true action=(action "removeInviteFromGroup" invite.id invite.parentingGroup.id) }}
           {{paper-icon 'clear'}}{{/paper-button}}
         </div>
         {{/paper-item}}
         {{paper-divider}}
+      {{/if}}
       {{/each}}
     {{/paper-list}}
   {{/paper-card-content}}
