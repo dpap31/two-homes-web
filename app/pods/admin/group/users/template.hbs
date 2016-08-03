@@ -38,7 +38,7 @@
           <h3>{{user.firstName}} {{user.lastName}}</h3>
           <h4>{{user.email}}</h4>
           {{#paper-button
-          icon-button=true action=(action "removeUserFromGroup" user model.parentingGroup) }}
+          icon-button=true action=(action "removeUserFromGroup" user) }}
           {{paper-icon 'clear'}}{{/paper-button}}
         </div>
         {{/paper-item}}

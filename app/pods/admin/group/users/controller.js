@@ -25,9 +25,10 @@ export default Ember.Controller.extend({
         invite.save().then(onSuccess, onFailure);
       },
 
-      removeUserFromGroup(user, group) {
-        group.get('users').removeObject(user);
-        group.save();
+      removeUserFromGroup(user) {
+        console.log(user);
+        user.set('parentingGroup', null);
+        user.save();
       },
 
       addUserToggle(){

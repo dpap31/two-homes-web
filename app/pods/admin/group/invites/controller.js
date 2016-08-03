@@ -25,9 +25,9 @@ export default Ember.Controller.extend({
         invite.save().then(onSuccess, onFailure);
       },
 
-      removeInviteFromGroup(inviteId, groupId) {
+      removeInviteFromGroup(inviteId) {
         let invite = this.store.peekRecord('invite', inviteId);
-        invite.set('parentingGroup', null)
+        invite.set('parentingGroup', null);
         invite.save();
       },
 
