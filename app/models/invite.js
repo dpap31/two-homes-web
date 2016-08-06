@@ -1,6 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  createdAt: DS.attr('date'),
+  updatedAt: DS.attr('date'),
   email: DS.attr('string'),
   token: DS.attr('string'),
   accepted: DS.attr('boolean', { defaultValue: false }),

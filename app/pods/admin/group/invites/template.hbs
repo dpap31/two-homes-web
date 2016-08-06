@@ -1,0 +1,52 @@
+{{#paper-card class="group-menu"}}
+  {{#paper-list}}
+    {{#paper-item class="md-3-line" action=(action "goToGroupUsers" model.parentingGroup)}}
+      <div class="md-list-item-text">User List</div>
+    {{/paper-item}}
+    {{paper-divider}}
+    {{#paper-item class="md-3-line" action=(action "goToGroupInvites" model.parentingGroup)}}
+      <div class="md-list-item-text">Pending Invites</div>
+    {{/paper-item}}
+  {{/paper-list}}
+{{/paper-card}}
+
+{{#paper-card class='group-members'}}
+  {{#paper-card-title class="card-header"}}
+    {{#paper-card-title-text}}
+      <h2>Pending Invites</h2>
+    {{/paper-card-title-text}}
+    {{#paper-button raised='true'icon-button=true action="addUserToggle"}}
+      {{paper-icon "group-add" class="md-menu-origin"}}
+    {{/paper-button}}
+  {{/paper-card-title}}
+{{#paper-card-content class="secondary-card-body"}}
+  {{#paper-list}}
+    {{#if isAddingUser}}
+      {{#paper-item class="md-3-line pg-new-invite"}}
+        <div class="md-list-item-text">
+          {{paper-input label="Email" type="email" value=emailAddress icon="email" icon-class="email" required=true}}
+          {{#paper-button icon-button=true action="addUserToggle"}}{{paper-icon 'clear'}}{{/paper-button}}
+        </div>
+        {{#paper-button disabled=isDisabled icon-button=true class='save' action="sendInvite"}}Invite{{/paper-button}}
+      {{/paper-item}}
+      {{paper-divider}}
+    {{/if}}
+
+
+    {{#each model.parentingGroup.invites as |invite| }}
+      {{#if invite.id}}
+        {{#paper-item class="md-3-line pg-user"}}
+        <div class="md-list-item-text">
+          <h3>{{invite.email}}</h3>
+          <h4>{{moment-from-now invite.createdAt interval=1000}}</h4>
+          {{#paper-button
+          icon-button=true action=(action "removeInviteFromGroup" invite.id) }}
+          {{paper-icon 'clear'}}{{/paper-button}}
+        </div>
+        {{/paper-item}}
+        {{paper-divider}}
+      {{/if}}
+      {{/each}}
+    {{/paper-list}}
+  {{/paper-card-content}}
+{{/paper-card}}

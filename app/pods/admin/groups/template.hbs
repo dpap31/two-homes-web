@@ -1,0 +1,52 @@
+<div layout='flex' class='md-padding'>
+  <div flex=1>
+    <h2>Parenting Groups</h2>
+  </div>
+  <div>
+    {{#paper-button raised=true primary=true action="save" iconButton=true class='new-pg'}} {{paper-icon "library add"}} New Group{{/paper-button}}
+  </div>
+</div>
+<br>
+{{#parenting-group-filter
+   filter=(action 'filterByUser') as |memberships|}}
+  <ul class="results">
+    {{#each memberships as |membership|}}
+      <div class="home-card">
+       {{#paper-card}}
+       {{#paper-toolbar class='pg-header'}}
+         {{#paper-button action='goToPg' param=membership.parentingGroup}}
+          {{#if membership.parentingGroup.name}}
+            <h2>{{membership.parentingGroup.name}}</h2>
+          {{else}}
+            <h2>Group {{membership.parentingGroup.id}}</h2>
+          {{/if}}
+      {{/paper-button}}
+       {{/paper-toolbar}}
+         {{#paper-card-title class="card-body"}}
+           {{#paper-card-title-text}}
+             <ul class="group-members">
+               {{#each membership.parentingGroup.users as |user| }}
+                 <li id="member">{{user.firstName}} {{user.lastName}}</li>
+               {{/each}}
+             </ul>
+           {{/paper-card-title-text}}
+         {{/paper-card-title}}
+         <div class="md-actions" layout="row" layout-align="end center">
+            {{#paper-button iconButton=true action='goToPgReports' param= membership.parentingGroup.id}}{{paper-icon "insert-chart"}}{{/paper-button}}
+            {{#paper-button iconButton=true action='goToPgSettings' param= membership.parentingGroup.id}}{{paper-icon "settings"}}{{/paper-button}}
+            {{#paper-button iconButton=true action='goToPgUsers' param= membership.parentingGroup.id}}{{paper-icon "group"}}{{/paper-button}}
+         </div>
+       {{/paper-card}}
+       </div>
+    {{else}}
+      <div class='no-results'>
+        {{paper-icon "find in page" size=5}}
+        <h3>No Results</h3>
+        <p>We couldn’t find any parenting groups matching your search</p>
+      </div>
+    {{/each}}
+  </ul>
+{{/parenting-group-filter}}
+
+
+

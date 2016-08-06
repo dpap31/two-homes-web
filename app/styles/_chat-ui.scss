@@ -64,15 +64,19 @@
 .conversation .self {
   justify-content: flex-end;
 }
-.message .help-block{
-  font-size: 70%
+.message > div > p > time{
+  font-size: 80%
 }
 .self .message{
     margin-left: auto;
+    text-align: right;
   }
 .message {
   background: white;
-  padding: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 0px;
+  padding-top: 0px;
   border-radius: 2px;
   box-shadow: 0 1px 2px rgba(black, 0.2);
   margin: 5px;

@@ -1,0 +1,30 @@
+.admin {
+  .group-menu{
+    width: 15%;
+    float: left;
+    background-color: $dark-gray-color;
+    border: $accent-color 2px solid;
+    color: white;
+  }
+  .group-members{
+    margin: 0 auto;
+    width: 75%;
+    .md-input{
+      width: 70%;
+    }
+    .save{
+      margin-right: 10% !important;
+      span{
+        background-color: $primary !important;
+      }
+    }
+    .paper-divider{
+      margin-bottom: 10px;
+      &:last-child{
+        display: none;
+        margin: 0px;
+      }
+    }
+  }
+}
+

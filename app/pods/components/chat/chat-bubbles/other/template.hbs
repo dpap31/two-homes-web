@@ -4,9 +4,7 @@
     <div class="md-list-item-text">
       <h3>{{message.body}}</h3>
       <p>
-        <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{message.createdAt}}</time>
-        Message UID: {{message.user.id}}
-        Session UID:{{currentUser.id}}
+        <time datetime='{{message.createdAt}}'>{{message.user.firstName}} • {{moment-from-now message.createdAt interval=1000}}</time>
       </p>
     </div>
   </div>

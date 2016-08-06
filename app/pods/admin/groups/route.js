@@ -28,20 +28,16 @@ export default Ember.Route.extend({
       model.newParentingGroup.save().then(onSuccess, onFailure);
     },
 
-    goToPg: function(pg) {
-      let router = this;
-      pg.get('conversations').then(function(convos) {
-        console.log(convos);
-        if (convos.length === 0){
-          router.transitionTo("app.parenting-group.conversations.new", pg);
-        } else {
-          router.transitionTo("app.parenting-group.conversation.messages", pg, convos.objectAt(0))
-        }
-      });
+    goToPgUsers: function(pg) {
+      this.transitionTo('admin.group.users', pg);
     },
 
-    goToPgInvite: function(pg) {
-      this.transitionTo("app.parenting-group.new-invite", pg);
-    }
+    goToPgSettings: function(pg) {
+      this.transitionTo("admin.group.settings", pg);
+    },
+
+    goToPgReports: function(pg) {
+      this.transitionTo("admin.group.reports", pg);
+    },
   }
 });
